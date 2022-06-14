@@ -1,13 +1,13 @@
 extends layout
 
 block title
-  title Spanish Evaluation Test
+  title The Spanish Evaluation Benchmark
 
 block description
-  meta(name='description', content='Stanford Question Answering Dataset (SQuAD) is a new reading comprehension dataset, consisting of questions posed by crowdworkers on a set of Wikipedia articles, where the answer to every question is a segment of text, or span, from the corresponding reading passage. With 100,000+ question-answer pairs on 500+ articles, SQuAD is significantly larger than previous reading comprehension datasets.')
+  meta(name='description', content='The Spaish Evaluation Benchmark (EvalES) is a new reading comprehension dataset, consisting of questions posed by crowdworkers on a set of Wikipedia articles, where the answer to every question is a segment of text, or span, from the corresponding reading passage. With 100,000+ question-answer pairs on 500+ articles, SQuAD is significantly larger than previous reading comprehension datasets.')
 
 block extralinks
-  link(rel='stylesheet', href='/stylesheets/index.css')
+  link(rel='stylesheet', href='./stylesheets/index.css')
   script(async defer src="https://buttons.github.io/buttons.js")
 
 block extrascripts
@@ -75,7 +75,7 @@ block content
             .infoBody
               .infoHeadline
                 h2 Leaderboard
-              p SQuAD2.0 tests the ability of a system to not only answer reading comprehension questions, but also abstain when presented with a question that cannot be answered based on the provided paragraph.
+              p.spaced SQuAD2.0 tests the ability of a system to not only answer reading comprehension questions, but also abstain when presented with a question that cannot be answered based on the provided paragraph.
               +squad_2_model_display(test2, true)
         .col-md-15
           .infoCard
@@ -103,11 +103,6 @@ block content
               a.btn.actionBtn(href="http://arxiv.org/abs/1806.03822") SQuAD2.0 paper (Rajpurkar & Jia et al. '18)
               hr
               p
-                b  SQuAD 1.1,
-                |  the previous version of the SQuAD dataset, contains 100,000+ question-answer pairs on 500+ articles.
-              a.btn.actionBtn(href="/explore/1.1/dev/") Explore SQuAD1.1 and model predictions
-              a.btn.actionBtn(href="http://arxiv.org/abs/1606.05250") SQuAD1.0 paper (Rajpurkar et al. '16)
-              .infoHeadline
                 h2 Getting Started
               p
                 | We've built a few resources to help you get started with the dataset.
@@ -138,10 +133,8 @@ block content
                 | Submission Tutorial
               h2 Have Questions?
               p 
-                | Ask us questions at our   
-                a(href="https://groups.google.com/forum/#!forum/squad-stanford-qa") google group
-                |  or at 
-                a(href="mailto:robinjia@stanford.edu") robinjia@stanford.edu
+                | Ask us questions at    
+                a(href="mailto:plantl-gob-es@bsc.es") plantl-gob-es@bsc.es
                 | .
             .infoSubheadline
               include includes/tweet
