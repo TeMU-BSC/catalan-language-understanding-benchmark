@@ -393,7 +393,6 @@ button:focus {
   }
 }
 .footer {
-  background-color: #333;
   border: none;
   border-radius: 0px;
   margin-bottom: 0px;
@@ -410,6 +409,9 @@ button:focus {
 @media (min-width: 768px) {
   .footer .rightNav {
     float: right;
+  }
+  .footer .centerNav {
+    margin: auto;
   }
 }
 html,

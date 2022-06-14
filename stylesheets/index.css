@@ -155,3 +155,6 @@ pre {
   padding-left: 2px;
   padding-right: 2px;
 }
+#contentCover p.spaced {
+  padding-bottom: 20px;
+}
