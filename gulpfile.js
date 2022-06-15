@@ -262,6 +262,11 @@ gulp.task('generate_index', async function () {
     .pipe(gulp.dest('./' + build_dir))
 })
 
+gulp.task('generate_submit', async function () {
+  return await gulp.src('views/submit.pug')
+    .pipe(pug())
+    .pipe(gulp.dest('./' + build_dir))
+})
 
 gulp.task('css', async function () {
   return  await gulp.src('./views/styles/*.styl')
@@ -275,7 +280,7 @@ gulp.task('deploy', async function () {
 })
 
 gulp.task('generate_exploration', gulp.series(exploration_tasks))
-gulp.task('generate', gulp.series('bower', 'generate_exploration',  'process_comp_output', 'generate_index',))
+gulp.task('generate', gulp.series('bower', 'generate_exploration',  'process_comp_output', 'generate_index', 'generate_submit',))
 
 gulp.task('correct_link_paths', gulp.series('generate'), async function () {
   return gulp.src('./' + build_dir + '**/*.html')
