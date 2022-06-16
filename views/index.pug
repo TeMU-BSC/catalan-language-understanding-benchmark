@@ -38,33 +38,34 @@ mixin squad_2_model_display(group, is_test)
         td
         td
         td
-    each model in group
-      tr
-        if is_test
-          td 
-            p #{model.rank}
-            span.date.label.label-default #{moment.unix(model.date).format('MMM DD, YYYY')}
-        td(style="word-break:break-word;")
-          if model.submit_link
-            a.link(href=model.submit_link) #{model.model_name}
-          else
-            | #{model.model_name}
-          p.institution #{model.institution}
-          if model.link
-            a.link(href=model.link) #{model.link}
-        td
-          if model.em == largest_em
-            b #{model.em.toPrecision(5)}
-          else
-            | #{model.em.toPrecision(5)}
-        td
-          if model.f1 == largest_f1
-            b #{model.f1.toPrecision(5)}
-          else
-            | #{model.f1.toPrecision(5)}
-        td
-        td
-        td
+    each model, index in group
+      if index < 4
+          tr
+            if is_test
+              td 
+                p #{model.rank}
+                span.date.label.label-default #{moment.unix(model.date).format('MMM DD, YYYY')}
+            td(style="word-break:break-word;")
+              if model.submit_link
+                a.link(href=model.submit_link) #{model.model_name}
+              else
+                | #{model.model_name}
+              p.institution #{model.institution}
+              if model.link
+                a.link(href=model.link) #{model.link}
+            td
+              if model.em == largest_em
+                b #{model.em.toPrecision(5)}
+              else
+                | #{model.em.toPrecision(5)}
+            td
+              if model.f1 == largest_f1
+                b #{model.f1.toPrecision(5)}
+              else
+                | #{model.f1.toPrecision(5)}
+            td
+            td
+            td
 
 block content
   .cover#contentCover
@@ -81,23 +82,18 @@ block content
           .infoCard
             .infoBody
               .infoHeadline
-                h2 What is SQuAD?
+                h2 What is EvalES?
               p 
                 span
-                  b S
-                  |tanford 
-                  b Qu
-                  |estion 
-                  b A
-                  |nswering 
-                  b D
-                  |ataset (SQuAD) 
+                  | Eval
+                  b ES 
                 | is a reading comprehension dataset, consisting of questions posed by crowdworkers on a set of Wikipedia articles, where the answer to every question is a segment of text, or 
                 i span
                 | , from the corresponding reading passage, or the question might be unanswerable.
               hr
               p
-                b  SQuAD2.0
+                | Eval
+                b  ES 
                 |  combines the 100,000 questions in SQuAD1.1 with over 50,000 unanswerable questions written adversarially by crowdworkers to look similar to answerable ones. To do well on SQuAD2.0, systems must not only answer questions when possible, but also determine when no answer is supported by the paragraph and abstain from answering.
               a.btn.actionBtn(href="/explore/v2.0/dev/") Explore SQuAD2.0 and model predictions
               a.btn.actionBtn(href="http://arxiv.org/abs/1806.03822") SQuAD2.0 paper (Rajpurkar & Jia et al. '18)
