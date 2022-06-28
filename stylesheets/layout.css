@@ -398,6 +398,7 @@ button:focus {
   margin-bottom: 0px;
   padding: 3px 0px;
   height: auto;
+  background-color: #fff;
 }
 .footer ul li a {
   font-size: 1em;
@@ -412,7 +413,6 @@ button:focus {
   }
   .footer .centerNav {
     margin: auto;
-    background-color: #fff;
   }
 }
 html,
