@@ -16,7 +16,37 @@ block content
         .infoCard
          .infoBody
             h1 Instructions for submitting
-            p These are the instructions for
-                b submitting data
-            |.
+            p
+            | To submit data fill the next form:
+            form(method='POST')
+                label Mail:
+                br
+                input(type='email' name='mail' placeholder='example@example.com' required)
+                br
+                label Model name:
+                br
+                input(type='text' name='model_name' placeholder='Model Name' required)
+                br
+                label Research Group:
+                br
+                input(type='text' name='research_group' placeholder='e.g: BSC' required)
+                br
+                label Paper Link
+                br
+                input(type='url' name='paper_link' placeholder='Where is the paper (if any)')
+                br
+                label Test 1
+                input(type='file' name='test1')
+                br
+                label Test 2
+                input(type='file' name='test1')
+                br
+                label Test 3
+                input(type='file' name='test1')
+                br
+                label Test 4
+                input(type='file' name='test1')
+                hr
+                input(type='submit' value='Submit')
+
 
