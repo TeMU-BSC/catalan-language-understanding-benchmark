@@ -412,6 +412,7 @@ button:focus {
   }
   .footer .centerNav {
     margin: auto;
+    background-color: #fff;
   }
 }
 html,
