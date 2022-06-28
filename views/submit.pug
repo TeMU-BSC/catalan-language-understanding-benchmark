@@ -8,6 +8,7 @@ block description
 
 block extralinks
   link(rel='stylesheet', href='./stylesheets/index.css')
+  // link(rel='stylesheet', href='./stylesheets/input.css')
 
 block content
   .cover#contentCover
@@ -35,18 +36,18 @@ block content
                 br
                 input(type='url' name='paper_link' placeholder='Where is the paper (if any)')
                 br
-                label Test 1
-                input(type='file' name='test1')
+                label.fileLabel Upload Test 1
+                    input.hidden(type='file' name='test1')
                 br
-                label Test 2
-                input(type='file' name='test1')
+                label.fileLabel Upload Test 2
+                    input.hidden(type='file' name='test1')
                 br
-                label Test 3
-                input(type='file' name='test1')
+                label.fileLabel Upload Test 3
+                    input.hidden(type='file' name='test1')
                 br
-                label Test 4
-                input(type='file' name='test1')
+                label.fileLabel Upload Test 4
+                    input.hidden(type='file' name='test1')
                 hr
-                input(type='submit' value='Submit')
+                input.submitButton(type='submit' value='Submit')
 
 
