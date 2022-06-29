@@ -413,6 +413,8 @@ button:focus {
   }
   .footer .centerNav {
     margin: auto;
+    display: flex;
+    flex-flow: row-reverse nowrap;
   }
 }
 html,
