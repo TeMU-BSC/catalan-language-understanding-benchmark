@@ -13,13 +13,14 @@ html
         link(rel="icon", href="./favicon.ico", type="image/x-icon")
         link(rel="stylesheet", href="./bower_components/bootstrap/dist/css/bootstrap.min.css")
         link(rel="stylesheet", href="./stylesheets/layout.css")
-        block extralinks
         script(src="./javascripts/analytics.js")
+        script(src="./bower_components/jquery/dist/jquery.min.js")
+        script(src="./bower_components/bootstrap/dist/js/bootstrap.min.js")
+        block extralinks
+        block extrascripts
     body
         include includes/nav
         include includes/topCover
         block content
         include includes/footer
-        script(src="./bower_components/jquery/dist/jquery.min.js")
-        script(src="./bower_components/bootstrap/dist/js/bootstrap.min.js")
-        block extrascripts
+

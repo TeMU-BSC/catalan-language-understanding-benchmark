@@ -17,36 +17,33 @@ block content
         .infoCard
          .infoBody
             h1 Instructions for submitting
-            p
-            | To submit data fill the next form:
-            form(method='POST')
-                label Mail:
-                br
-                input(type='email' name='mail' placeholder='example@example.com' required)
-                br
-                label Model name:
-                br
-                input(type='text' name='model_name' placeholder='Model Name' required)
-                br
-                label Research Group:
-                br
-                input(type='text' name='research_group' placeholder='e.g: BSC' required)
-                br
-                label Paper Link
-                br
-                input(type='url' name='paper_link' placeholder='Where is the paper (if any)')
-                br
-                label.fileLabel Upload Test 1
-                    input.hidden(type='file' name='test1')
-                br
-                label.fileLabel Upload Test 2
-                    input.hidden(type='file' name='test1')
-                br
-                label.fileLabel Upload Test 3
-                    input.hidden(type='file' name='test1')
-                br
-                label.fileLabel Upload Test 4
-                    input.hidden(type='file' name='test1')
+            p To submit data fill the next form:
+            br
+            form
+                div.form-group
+                    label(for='mail') Mail:
+                    input.form-control(type='email' id='mail' name='mail' placeholder='example@example.com' required)
+                div.form-group
+                    label Model name:
+                    input.form-control(type='text' name='model_name' placeholder='Model Name' required)
+                div.form-group
+                    label Research Group:
+                    input.form-control(type='text' name='research_group' placeholder='e.g: BSC' required)
+                div.form-group
+                    label Paper Link
+                    input.form-control(type='url' name='paper_link' placeholder='Where is the paper (if any)')
+                div.form-group
+                    label Upload Test 1
+                    input(type='file' name='test1')
+                div.form-group
+                    label Upload Test 2
+                    input(type='file' name='test2')
+                div.form-group
+                    label Upload Test 3
+                    input(type='file' name='test3')
+                div.form-group
+                    label Upload Test 4
+                    input(type='file' name='test4')
                 hr
                 input.submitButton(type='submit' value='Submit')
 
