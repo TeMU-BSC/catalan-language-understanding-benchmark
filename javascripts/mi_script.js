@@ -3,7 +3,7 @@ let mockData = [
         email: 'test@mail.es',
         modelName: 'Megatron',
         researchGroup: 'BSC',
-        paperLink: 'google.es',
+        paperLink: 'https://google.com',
         task1: '81.35',
         task2: '85.87/77.90',
         task3: '81.35',
@@ -14,7 +14,7 @@ let mockData = [
         email: 'test@mail.es',
         modelName: 'Alfred',
         researchGroup: 'BSC2',
-        paperLink: 'google.es',
+        paperLink: 'https://google.com',
         task1: '81.35',
         task2: '85.87/77.90',
         task3: '81.35',
@@ -25,7 +25,7 @@ let mockData = [
         email: 'test@mail.es',
         modelName: 'Pepe',
         researchGroup: 'BSC3',
-        paperLink: 'google.es',
+        paperLink: 'https://google.com',
         task1: '81.35',
         task2: '85.87/77.90',
         task3: '81.35',
@@ -47,7 +47,10 @@ $(document).ready(()=>{
     $(arr).each(function (elem) {
         innerTable += '<tr>'
         $(arr[elem]).each(function (innerElem) {
-            innerTable += '<td>' + arr[elem][innerElem] + '</td>';
+            if (innerElem == 3) 
+                innerTable += '<td><a>' + arr[elem][innerElem] + '<a/></td>';
+            else 
+                innerTable += '<td>' + arr[elem][innerElem] + '</td>';
         });
         innerTable += '</tr>';
     });
