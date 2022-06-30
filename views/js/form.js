@@ -1,8 +1,8 @@
 function submit_form(e) {
     $.ajax({
-        url: "localhost:3000/api/results",
+        url: "http://localhost:3000/api/results",
         type: "POST",
-        data: new FormData($("#test_form")[0]),
+        data: new FormData($("#evaluation_form")[0]),
         processData: false,
         contentType: false,
         success: submit_success,
@@ -14,6 +14,6 @@ function submit_success() {
     alert("Success!");
 }
 
-function submit_error() {
-    alert("Fail!");
+function submit_error(err) {
+    console.error(err);
 }

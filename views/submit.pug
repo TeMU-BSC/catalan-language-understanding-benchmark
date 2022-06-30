@@ -8,6 +8,7 @@ block description
 
 block extralinks
   link(rel='stylesheet', href='./stylesheets/index.css')
+  script(src='./javascripts/form.js')
   // link(rel='stylesheet', href='./stylesheets/input.css')
 
 block content
@@ -19,7 +20,7 @@ block content
             h1 Instructions for submitting
             p To submit data fill the next form:
             br
-            form
+            form#evaluation_form
                 div.form-group
                     label(for='mail') Mail:
                     input.form-control(type='email' id='mail' name='mail' placeholder='example@example.com' required)
@@ -35,20 +36,20 @@ block content
                 hr
                 div.form-group
                     label Upload Test 1
-                    input(type='file' name='test1')
+                    input(type='file' name='task1' id='task1')
                 div.form-group
                     label Upload Test 2
-                    input(type='file' name='test2')
+                    input(type='file' name='task2' id='task2')
                 div.form-group
                     label Upload Test 3
-                    input(type='file' name='test3')
+                    input(type='file' name='task3' id='task3')
                 div.form-group
                     label Upload Test 4
-                    input(type='file' name='test4')
+                    input(type='file' name='task4' id='task4')
                 div.form-group
                     label Upload Test 5
-                    input(type='file' name='test4')
+                    input(type='file' name='task5' id='task5')
                 hr
-                input.submitButton(type='submit' value='Submit')
+                input.submitButton(type='button' value='Submit' onclick="submit_form()")
 
 
