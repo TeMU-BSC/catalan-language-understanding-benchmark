@@ -40,7 +40,6 @@ $(document).ready(()=>{
         return [element.email, element.modelName, element.researchGroup, element.paperLink, element.task1, element.task2, element.task3, element.task4, element.task5]
     });
 
-    // let tr = ''
     let innerTable = '<table class="table performaceTable">';
     innerTable += '<tr><th>Rank</th><th>Model</th><th>Group</th><th>Paper</th><th>Task 1</th><th>Task 2</th><th>Task 3</th><th>Task 4</th><th>Task 5</th></tr>';
 
