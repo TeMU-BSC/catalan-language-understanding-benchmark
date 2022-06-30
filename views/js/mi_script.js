@@ -35,6 +35,27 @@ let mockData = [
 ];
 
 
+async function obtainTables() {
+    the_json = await $.ajax({
+        url: "http://localhost:3000/api/tables",
+        dataType: "json",
+        // contentType: "application/json",
+        success: tableSuccess,
+        error: tableError
+    })
+        .catch((e) => { console.log(e) });
+    return the_json
+}
+
+function tableSuccess(d) {
+    // console.log(d);
+}
+
+function tableError(e) {
+    console.log(e);
+}
+
+
 $(document).ready(()=>{
     let arr = mockData.map((element)=>{
         return [element.email, element.modelName, element.researchGroup, element.paperLink, element.task1, element.task2, element.task3, element.task4, element.task5]
