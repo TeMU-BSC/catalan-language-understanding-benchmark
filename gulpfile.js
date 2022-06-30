@@ -11,7 +11,7 @@ var stylus = require('gulp-stylus')
 var minify = require('gulp-minify')
 var path = require('path')
 var fs = require('fs')
-var cheerio = require('cheerio')
+// var cheerio = require('cheerio')
 
 var build_dir = 'spanish-benchmark/' // good to have this be the same as the repo name for gh-pages purposes
 
@@ -48,11 +48,9 @@ gulp.task('generate_index', async function () {
 
 gulp.task('generate_datasets', async function () {
   var test_1 = require('./texts/datasets.json')
-  var moment = require('moment')
   return await gulp.src('views/datasets.pug')
       .pipe(data(function () {
-        return { 'test1': test_1,
-          'moment': moment}
+        return { 'test1': test_1 }
       }))
     .pipe(pug())
     .pipe(gulp.dest('./' + build_dir))
