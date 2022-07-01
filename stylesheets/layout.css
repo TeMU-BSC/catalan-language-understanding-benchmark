@@ -126,7 +126,7 @@
 }
 .alert {
   color: #fff;
-  background-color: #8970ef;
+  background-color: #fef250;
   font-weight: 600;
   padding: 10px;
   border: none;
@@ -138,7 +138,7 @@
 }
 .cover {
   min-height: 100%;
-  background: #eee;
+  background: #222;
   background-position: center;
   background-size: cover;
   position: relative;
@@ -188,7 +188,7 @@
   justify-content: center;
 }
 .infoCard {
-  background: #fff;
+  background: #000;
   margin-bottom: 20px;
 }
 @media (min-width: 768px) {
@@ -197,7 +197,7 @@
   }
 }
 .infoCard .infoSubheadline {
-  background: #f3f3f3;
+  background: #3f3f3f;
   padding: 20px 30px;
 }
 .infoCard .infoSubheadline h1,
@@ -213,7 +213,7 @@
   font-weight: 400;
 }
 .infoCard .infoSubheadline.backgrounded {
-  background: #8970ef;
+  background: #fef250;
 }
 .infoCard .infoSubheadline.backgrounded h1,
 .infoCard .infoSubheadline.backgrounded h2,
@@ -221,7 +221,7 @@
   color: #fff;
 }
 .infoCard .actLink {
-  background: #8970ef;
+  background: #fef250;
 }
 .infoCard .actLink h1,
 .infoCard .actLink h2,
@@ -233,6 +233,7 @@
   opacity: 0.9;
 }
 .infoCard .infoBody {
+  color: #eee;
   padding: 30px;
 }
 .infoCard .infoBody >.infoHeadline {
@@ -243,7 +244,7 @@
 .infoCard .infoBody >.infoHeadline p {
   margin: 5px 0px;
   font-weight: 600;
-  color: #333;
+  color: #eee;
 }
 .infoCard .infoBody >.infoHeadline h1 {
   font-size: 1.8em;
@@ -255,31 +256,34 @@
 }
 .infoCard .infoBody h2 {
   font-weight: 600;
-  color: #666;
+  color: #eee;
   font-size: 1.6em;
 }
+.infoCard .infoBody p {
+  color: #eee;
+}
 .actionBtn:hover {
-  background-color: #136b82;
-  border-color: #136b82;
+  background-color: #f0bd2c;
+  border-color: #f0bd2c;
 }
 .actionBtn {
   display: block;
   margin: 10px auto;
   max-width: 350px;
   width: 100%;
-  background-color: #4f9db1;
-  color: #fff !important;
+  background-color: #dc0;
+  color: #000 !important;
   text-align: center;
   font-size: 1em;
   font-weight: 600;
-  border: 2px solid #4f9db1;
+  border: 2px solid #dc0;
   border-radius: 20px;
   transition: all 0.5s;
   white-space: normal;
 }
 .inverseBtn {
   background-color: #fff;
-  color: #4f9db1 !important;
+  color: #dc0 !important;
 }
 .inverseBtn:hover {
   color: #fff !important;
@@ -303,7 +307,7 @@ button:focus {
 }
 #topNavbar {
   border: none;
-  background: #136b82;
+  background: #f0bd2c;
   margin-bottom: 0px;
 }
 #topNavbar .leftNav {
@@ -316,7 +320,7 @@ button:focus {
   line-height: 100%;
 }
 #topNavbar .navbar-brand {
-  color: #fff;
+  color: #000;
 }
 #topNavbar #navbar {
   border: none;
@@ -344,7 +348,7 @@ button:focus {
 }
 #topNavbar .navbar-right a,
 #topNavbar .navbar-right a:hover {
-  color: #fff !important;
+  color: #000 !important;
 }
 #topNavbar .navbar-toggle:focus {
   background: none;
@@ -364,12 +368,12 @@ button:focus {
   }
 }
 #topCover {
-  background: #4f9db1;
+  background: #dc0;
   box-shadow: 0px -10px 20px 2px rgba(120,120,120,0.2) inset;
   min-height: initial;
 }
 #topCover #appTitle {
-  color: #fff;
+  color: #000;
   font-size: 7.3em;
   margin: 0px;
   padding: 0px;
@@ -380,7 +384,7 @@ button:focus {
   font-weight: 400;
 }
 #topCover #appSubtitle {
-  color: #fff;
+  color: #000;
   font-size: 2em;
   margin: 0px;
   padding: 0px;
@@ -398,7 +402,7 @@ button:focus {
   margin-bottom: 0px;
   padding: 15px 0px;
   height: auto;
-  background-color: #fff;
+  background-color: #000;
 }
 .footer ul li a {
   font-size: 1em;
@@ -415,6 +419,7 @@ button:focus {
     margin: auto;
     display: flex;
     flex-flow: row-reverse nowrap;
+    gap: 10px;
   }
 }
 html,
@@ -444,16 +449,16 @@ p {
   margin: 0px;
 }
 body {
-  background-color: #fff;
+  background-color: #222;
 }
 a {
-  color: #4f9db1;
+  color: #dc0;
 }
 a:hover,
 a:active,
 a:focus {
   text-decoration: none !important;
-  color: #136b82;
+  color: #f0bd2c;
 }
 ul {
   margin: 0px;

@@ -5,7 +5,7 @@ pre {
   background-color: #fff;
   line-height: 1.5em;
   font-size: 1em;
-  border: 2px solid #4f9db1;
+  border: 2px solid #dc0;
   color: #555;
 }
 .qa-wrap {
@@ -132,34 +132,34 @@ pre {
 .fileLabel {
   margin: 10px 0;
   width: 15%;
-  background-color: #4f9db1;
+  background-color: #dc0;
   color: #fff !important;
   text-align: center;
-  border: 2px solid #4f9db1;
+  border: 2px solid #dc0;
   padding: 10px;
   border-radius: 25px;
   transition: all 0.5s;
 }
 .fileLabel:hover {
-  background-color: #136b82;
-  border-color: #136b82;
+  background-color: #f0bd2c;
+  border-color: #f0bd2c;
 }
 .hidden {
   display: none;
 }
 .submitButton {
   width: 15%;
-  background-color: #4f9db1;
-  color: #fff !important;
+  background-color: #dc0;
+  color: #000 !important;
   text-align: center;
-  border: 2px solid #4f9db1;
+  border: 2px solid #dc0;
   padding: 15px;
   border-radius: 30px;
   transition: all 0.5s;
 }
 .submitButton:hover {
-  background-color: #136b82;
-  border-color: #136b82;
+  background-color: #f0bd2c;
+  border-color: #f0bd2c;
 }
 .datasetHolder {
   margin: 20px 0;
