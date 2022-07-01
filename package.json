@@ -1,5 +1,5 @@
 {
-  "name": "spanish-benchmark",
+  "name": "catalan-language-understanding-benchmark",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -24,12 +24,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TeMU-BSC/spanish-benchmark"
+    "url": "git+https://github.com/TeMU-BSC/catalan-language-understanding-benchmark"
   },
   "author": "TeMU-BSC",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/TeMU-BSC/spanish-benchmark/issues"
+    "url": "https://github.com/TeMU-BSC/catalan-language-understanding-benchmark/issues"
   },
-  "homepage": "https://github.com/TeMU-BSC/spanish-benchmark"
+  "homepage": "https://github.com/TeMU-BSC/catalan-language-understanding-benchmark"
 }
