@@ -13,7 +13,7 @@ var path = require('path')
 var fs = require('fs')
 // var cheerio = require('cheerio')
 
-var build_dir = 'catalan-language-understanding-benchmark' // good to have this be the same as the repo name for gh-pages purposes
+var build_dir = 'catalan-language-understanding-benchmark/' // good to have this be the same as the repo name for gh-pages purposes
 
 
 gulp.task('bower', function () {
