@@ -149,17 +149,17 @@ pre {
 }
 .submitButton {
   width: 15%;
-  background-color: #5353ff;
+  background-color: #ffce2d;
   color: #000 !important;
   text-align: center;
-  border: 2px solid #5353ff;
+  border: 2px solid #ffce2d;
   padding: 15px;
   border-radius: 30px;
   transition: all 0.5s;
 }
 .submitButton:hover {
-  background-color: #e63946;
-  border-color: #e63946;
+  background-color: #e40520;
+  border-color: #e40520;
 }
 .datasetHolder {
   margin: 20px 0;
