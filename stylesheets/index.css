@@ -164,6 +164,7 @@ pre {
 }
 .datasetHolder {
   margin: 20px 0;
+  white-space: pre-wrap;
 }
 #contentCover .performanceTable {
   margin: 10px 0px;
