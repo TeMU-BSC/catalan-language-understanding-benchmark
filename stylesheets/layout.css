@@ -263,27 +263,27 @@
   color: #eee;
 }
 .actionBtn:hover {
-  background-color: #e63946;
-  border-color: #e63946;
+  background-color: #e40520;
+  border-color: #e40520;
 }
 .actionBtn {
   display: block;
   margin: 10px auto;
   max-width: 350px;
   width: 100%;
-  background-color: #f0bd2c;
+  background-color: #ffce2d;
   color: #000 !important;
   text-align: center;
   font-size: 1em;
   font-weight: 600;
-  border: 2px solid #f0bd2c;
+  border: 2px solid #ffce2d;
   border-radius: 20px;
   transition: all 0.5s;
   white-space: normal;
 }
 .inverseBtn {
   background-color: #fff;
-  color: #f0bd2c !important;
+  color: #ffce2d !important;
 }
 .inverseBtn:hover {
   color: #fff !important;
@@ -307,7 +307,7 @@ button:focus {
 }
 #topNavbar {
   border: none;
-  background: #e63946;
+  background: #e40520;
   margin-bottom: 0px;
 }
 #topNavbar .leftNav {
@@ -320,7 +320,7 @@ button:focus {
   line-height: 100%;
 }
 #topNavbar .navbar-brand {
-  color: #000;
+  color: #fff;
 }
 #topNavbar #navbar {
   border: none;
@@ -348,7 +348,7 @@ button:focus {
 }
 #topNavbar .navbar-right a,
 #topNavbar .navbar-right a:hover {
-  color: #000 !important;
+  color: #fff !important;
 }
 #topNavbar .navbar-toggle:focus {
   background: none;
@@ -368,7 +368,7 @@ button:focus {
   }
 }
 #topCover {
-  background: #f0bd2c;
+  background: #ffce2d;
   box-shadow: 0px -10px 20px 2px rgba(120,120,120,0.2) inset;
   min-height: initial;
 }
@@ -452,13 +452,13 @@ body {
   background-color: #222;
 }
 a {
-  color: #f0bd2c;
+  color: #ffce2d;
 }
 a:hover,
 a:active,
 a:focus {
   text-decoration: none !important;
-  color: #e63946;
+  color: #e40520;
 }
 ul {
   margin: 0px;
