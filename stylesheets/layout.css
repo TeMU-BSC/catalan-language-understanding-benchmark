@@ -367,10 +367,30 @@ button:focus {
   background-position: right;
   background-repeat: no-repeat;
   height: 35vh;
-  background-size: cover;
+  background-size: 100% auto;
 }
 #topCover #titleImg {
   width: 100%;
+}
+@media (min-width: 300px) {
+  #topCover {
+    height: 9vh;
+  }
+}
+@media (min-width: 500px) {
+  #topCover {
+    height: 14vh;
+  }
+}
+@media (min-width: 768px) {
+  #topCover {
+    height: 25vh;
+  }
+}
+@media (min-width: 1200px) {
+  #topCover {
+    height: 35vh;
+  }
 }
 .footer {
   border: none;
