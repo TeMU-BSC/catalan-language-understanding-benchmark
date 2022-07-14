@@ -25,7 +25,7 @@ function tableSuccess(d) {
             // task5: element.task5
         // }
     });
-    const headers = ['Rank', 'Model', 'Group', 'Paper', 'Task 1', 'Task 2', 'Task 3', 'Task 4', 'Task 5'];
+    const headers = ['Rank', 'Model', 'Group', 'Paper', 'NER (F1)', 'POS (F1)', 'STS', 'ViquiQuAD', 'XQuAD', 'TECa', 'TeCla', 'AnCora'];
 
     let innerTable = '<table class="table performaceTable">';
     innerTable += '<tr>';
