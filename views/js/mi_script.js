@@ -11,7 +11,7 @@ function obtainTables() {
 function tableSuccess(d) {
     console.log(d);
     let arr = d.map((element)=>{
-        return [element.email, element.modelName, element.researchGroup, element.paperLink, element.task1, element.task2, element.task3, element.task4, element.task5];
+        return [element.email, element.modelName, element.researchGroup, element.paperLink, element.STS_ca.combined_score, element.POS.F1, element.VilaQuAD.total, element.ViquiQuAD.total, element.XQuAD_Ca.total, element.TeCla.Accuracy, element.TECa.Accuracy, element.AnCora_ca.F1];
         // return {email: element.email}
         // return {
             // email: element.email,
@@ -25,7 +25,7 @@ function tableSuccess(d) {
             // task5: element.task5
         // }
     });
-    const headers = ['Rank', 'Model', 'Group', 'Paper', 'NER (F1)', 'POS (F1)', 'STS', 'ViquiQuAD', 'XQuAD', 'TECa', 'TeCla', 'AnCora'];
+    const headers = ['Rank', 'Model', 'Group', 'Paper', 'STS', 'POS', 'VilaQuAD', 'ViquiQuAD', 'XQuAD', 'TECa', 'TeCla', 'AnCora'];
 
     let innerTable = '<table class="table performaceTable">';
     innerTable += '<tr>';
