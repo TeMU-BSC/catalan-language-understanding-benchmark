@@ -36,7 +36,7 @@ gulp.task('js', function () {
 gulp.task('connect', async function () {
   await connect.server({
     host: '0.0.0.0',
-    root: './spanish-benchmark'
+    root: './catalan-language-understanding-benchmark'
   })
 })
 
