@@ -7,6 +7,10 @@ function submit_form(e) {
         contentType: false,
         success: submit_success,
         error: submit_error
+    }).done((data) => {
+        if (!/[\w_]+\@\w\.\w{2,3}/.exec(data["email"])) {
+            $("#email").addClass("has-error");
+        }
     });
 }
 
