@@ -9,7 +9,7 @@ function submit_form(e) {
         error: submit_error
     }).done((data) => {
         if (!/[\w_]+\@\w\.\w{2,3}/.exec(data["email"])) {
-            $("#email").addClass("has-error");
+            $("#emailDiv").addClass("has-error");
         }
     });
 }
