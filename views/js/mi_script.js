@@ -1,6 +1,6 @@
 function obtainTables() {
     $.ajax({
-        url: "http://localhost:3000/api/tables",
+        url: "http://bsclsaina01.bsc.es:3000/api/tables",
         dataType: "json",
         // contentType: "application/json",
         success: tableSuccess,
