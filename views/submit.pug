@@ -21,43 +21,43 @@ block content
             p To submit data fill the next form:
             br
             form#evaluation_form
-                div.form-group#emailDiv
+                div.form-group.has-error#emailDiv
                     label.control-label(for='email') Mail:
                     input.form-control(type='email' id='email' name='email' placeholder='example@example.com' onchange='checkMail()' required)
-                div.form-group
+                div.form-group.has-error#modelNameDiv
                     label.control-label(for='modelName') Model name:
-                    input.form-control(type='text' id='modelName' name='modelName' placeholder='Model Name' required)
-                div.form-group
+                    input.form-control(type='text' id='modelName' name='modelName' placeholder='Model Name' onchange='checkText(this)' required)
+                div.form-group.has-error#researchGroupDiv
                     label.control-label(for='researchGroup') Research Group:
-                    input.form-control(type='text' id='researchGroup' name='researchGroup' placeholder='e.g: BSC' required)
-                div.form-group#paperLinkDiv
+                    input.form-control(type='text' id='researchGroup' name='researchGroup' placeholder='e.g: BSC' onchange='checkText(this)' required)
+                div.form-group.has-error#paperLinkDiv
                     label.control-label(for='paperLink') Paper Link
                     input.form-control(type='url' id='paperLink' name='paperLink' placeholder='Where is the paper (if any)' onchange='checkLink()')
                 hr
-                div.form-group
+                div.form-group.has-error#stsDiv
                     label.control-label Upload STS_ca
-                    input(type='file' name='STS_ca' id='STS_ca' required)
-                div.form-group
+                    input(type='file' name='STS_ca' id='STS_ca' onchange='checkFile(this)' required)
+                div.form-group.has-error#posDiv
                     label.control-label Upload POS
-                    input(type='file' name='POS' id='POS' required)
-                div.form-group
+                    input(type='file' name='POS' id='POS' onchange='checkFile(this)' required)
+                div.form-group.has-error#vilaquadDiv
                     label.control-label Upload VilaQuAD
-                    input(type='file' name='VilaQuAD' id='VilaQuAD' required)
-                div.form-group
+                    input(type='file' name='VilaQuAD' id='VilaQuAD' onchange='checkFile(this)' required)
+                div.form-group.has-error#viquiquadDiv
                     label.control-label Upload ViquiQuAD
-                    input(type='file' name='ViquiQuAD' id='ViquiQuAD' required)
-                div.form-group
+                    input(type='file' name='ViquiQuAD' id='ViquiQuAD' onchange='checkFile(this)' required)
+                div.form-group.has-error#xquadDiv
                     label.control-label Upload XQuAD
-                    input(type='file' name='XQuAD' id='XQuAD' required)
-                div.form-group
+                    input(type='file' name='XQuAD' id='XQuAD' onchange='checkFile(this)' required)
+                div.form-group.has-error#teclaDiv
                     label.control-label Upload TeCla
-                    input(type='file' name='TeCla' id='TeCla' required)
-                div.form-group
+                    input(type='file' name='TeCla' id='TeCla' onchange='checkFile(this)' required)
+                div.form-group.has-error#tecaDiv
                     label.control-label Upload TECa
-                    input(type='file' name='TECa' id='TECa' required)
-                div.form-group
+                    input(type='file' name='TECa' id='TECa' onchange='checkFile(this)' required)
+                div.form-group.has-error#ancoraDiv
                     label.control-label Upload AnCora
-                    input(type='file' name='AnCora' id='AnCora' required)
+                    input(type='file' name='AnCora' id='AnCora' onchange='checkFile(this)' required)
                 hr
                 input.submitButton#submit_button(type='button' value='Submit' onclick='submitForm()')
 
