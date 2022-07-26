@@ -1,46 +1,44 @@
-function check_mail (mail) {
-    let mailError = false;
-    if (/[\w_]+\@\w\.\w{2,3}/.exec(mail) == null) {
-        $("#emailDiv").addClass("has-error");
-        mailError = true;
-    }
-    return mailError
+function checkMail () {
+  const mail = $('#email').val()
+  if (/[\w\-]+@\w+\.\w{2,3}/.exec(mail) == null) {
+    $('#emailDiv').addClass('has-error')
+    console.log(mail + ' is not valid.')
+  } else {
+    $('#emailDiv').removeClass('has-error')
+  }
 }
 
-function check_link (paperLink) {
-    let linkError = false;
-    if (/http[s]?:\/\/[\w-]+\.\w{2,3}[\/\w-]*\.?\w{0,4}/.exec(paperLink) == null) {
-        $("#emailDiv").addClass("has-error");
-        linkError = true;
-    }
-    return linkError
+function checkLink () {
+  const paperLink = $('#paperLink').val()
+  if (paperLink !== '' && /http[s]?:\/\/[\w-]+\.\w{2,3}[/\w-]*\.?\w{0,4}/.exec(paperLink) == null) {
+    $('#paperLinkDiv').addClass('has-error')
+    console.log('Link ' + paperLink + ' is not valid.')
+  } else {
+    $('#paperLinkDiv').removeClass('has-error')
+  }
 }
 
-function check_form () {
-    const formData = new FormData($("#evaluation_form")[0]);
-    const mailErr = check_mail (formData.get("email"));
-    const linkErr = check_link (formData.get("paperLink"));
-    if (mailErr && linkErr) {
-        submit_form ()
-    }
-}
-
-function submit_form() {
+function submitForm (e) {
+  let formData = new FormData($('#evaluation_form')[0])
+  // let mailValid = checkMail(formData.get('email'))
+  // let linkValid = checkLink(formData.get('paperLink'))
+  // if (mailValid && linkValid) {
     $.ajax({
-        url: "http://localhost:3000/api/results",
-        type: "POST",
-        data: new FormData($("#evaluation_form")[0]),
-        processData: false,
-        contentType: false,
-        success: submit_success,
-        error: submit_error
-    });
+      url: 'http://localhost:3000/api/results',
+      type: 'POST',
+      data: formData,
+      processData: false,
+      contentType: false,
+      success: submitSuccess,
+      error: submitError
+    })
+  // }
 }
 
-function submit_success() {
-    alert("Success!");
+function submitSuccess () {
+  alert('Success!')
 }
 
-function submit_error(err) {
-    console.error(err);
+function submitError (err) {
+  // console.error(err)
 }

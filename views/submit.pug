@@ -23,16 +23,16 @@ block content
             form#evaluation_form
                 div.form-group#emailDiv
                     label.control-label(for='email') Mail:
-                    input.form-control(type='email' id='email' name='email' placeholder='example@example.com' required)
+                    input.form-control(type='email' id='email' name='email' placeholder='example@example.com' onchange='checkMail()' required)
                 div.form-group
                     label.control-label(for='modelName') Model name:
-                    input.form-control(type='text' name='modelName' placeholder='Model Name' required)
+                    input.form-control(type='text' id='modelName' name='modelName' placeholder='Model Name' required)
                 div.form-group
                     label.control-label(for='researchGroup') Research Group:
                     input.form-control(type='text' id='researchGroup' name='researchGroup' placeholder='e.g: BSC' required)
                 div.form-group#paperLinkDiv
                     label.control-label(for='paperLink') Paper Link
-                    input.form-control(type='url' id='paperLink' name='paperLink' placeholder='Where is the paper (if any)' required)
+                    input.form-control(type='url' id='paperLink' name='paperLink' placeholder='Where is the paper (if any)' onchange='checkLink()')
                 hr
                 div.form-group
                     label.control-label Upload STS_ca
@@ -47,7 +47,7 @@ block content
                     label.control-label Upload ViquiQuAD
                     input(type='file' name='ViquiQuAD' id='ViquiQuAD' required)
                 div.form-group
-                    label.control-label Upload XQuAD_ca
+                    label.control-label Upload XQuAD
                     input(type='file' name='XQuAD' id='XQuAD' required)
                 div.form-group
                     label.control-label Upload TeCla
@@ -59,6 +59,6 @@ block content
                     label.control-label Upload AnCora
                     input(type='file' name='AnCora' id='AnCora' required)
                 hr
-                input.submitButton(type='button' value='Submit' onclick="checkForm()")
+                input.submitButton#submit_button(type='button' value='Submit' onclick='submitForm()')
 
 
