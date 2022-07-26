@@ -43,7 +43,7 @@ function submitForm (e) {
   if (!$('#evaluation_form div').hasClass('has-error')) {
     $('#submit_button').val('Submit')
     $.ajax({
-      url: 'http://localhost:3000/api/results',
+      url: 'http://bsclsaina01.bsc.es:3000/api/results',
       type: 'POST',
       data: formData,
       processData: false,
