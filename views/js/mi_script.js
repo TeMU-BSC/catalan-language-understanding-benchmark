@@ -1,6 +1,6 @@
 function obtainTables () {
   $.ajax({
-    url: 'http://bsclsaina01.bsc.es:3000/api/tables',
+    url: 'https://bsclsaina01.bsc.es/clubapi/tables',
     dataType: 'json',
     // contentType: "application/json",
     success: tableSuccess,
@@ -44,7 +44,7 @@ function tableSuccess (d) {
           innerTable += '<td><a>' + arr[elem][innerElem]
           break
         case 2:
-          innerTable += '<td>' + arr[elem][innerElem] + '<br>' + arr[elem][0]
+          innerTable += '<td>' + arr[elem][innerElem] // + '<br>' + arr[elem][0]
           break
         default:
           innerTable += '<td>' + arr[elem][innerElem]
