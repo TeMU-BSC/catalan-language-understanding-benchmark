@@ -1,6 +1,6 @@
 function checkMail () {
   const mail = $('#email').val()
-  if (/[\w\-]+@\w+\.\w{2,3}/.exec(mail) == null) {
+  if (/[\w-]+@\w+\.\w{2,3}/.exec(mail) == null) {
     $('#emailDiv').addClass('has-error').append('<div class="help-block">Mail ' + mail + ' is not valid</div>')
   } else {
     $('#emailDiv').removeClass('has-error')
@@ -43,24 +43,22 @@ function submitForm (e) {
   if (!$('#evaluation_form div').hasClass('has-error')) {
     $('#submit_button').val('Submit')
     $.ajax({
-      url: 'http://bsclsaina01.bsc.es:3000/api/results',
+      url: 'https://bsclsaina01.bsc.es/clubapi/results',
       type: 'POST',
       data: formData,
       processData: false,
       contentType: false,
       success: submitSuccess,
       error: submitError
-    }).done(() => {
-      $('#evaluation_form').css('display', 'none').parent().append('<img src="../ok.png" alt="Evaluation sent successfully">')
-      $('#evaluation_form + img').css('filter', 'invert(100%)').css('text-align', 'center')
-      $('#evaluation_form + p').css('display', 'none')
-      $('#evaluation_form + h1').text('Thanks for submitting!')
     })
   }
 }
 
 function submitSuccess () {
-  alert('Success!')
+  $('#evaluation_form').css('display', 'none').parent().append('<img src="../ok.png" alt="Evaluation sent successfully">')
+  $('#evaluation_form + img').css('filter', 'invert(100%)').css('text-align', 'center')
+  $('#evaluation_form + p').css('display', 'none')
+  $('#evaluation_form + h1').text('Thanks for submitting!')
 }
 
 function submitError (err) {
