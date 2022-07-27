@@ -27,7 +27,7 @@ function tableSuccess (d) {
   })
   const headers = ['Rank', 'Model', 'Group', 'Paper', 'STS', 'POS', 'VilaQuAD', 'ViquiQuAD', 'XQuAD', 'TECa', 'TeCla', 'AnCora']
 
-  let innerTable = '<table class="table performaceTable">'
+  let innerTable = '<table class="table performanceTable">'
   innerTable += '<tr>'
   $(headers).each(function (header) {
     innerTable += '<th>' + headers[header]
