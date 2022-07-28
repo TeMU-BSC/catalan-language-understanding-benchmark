@@ -12,3 +12,4 @@ saved.html
 results*.json
 
 .idea
+yarn.lock
