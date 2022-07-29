@@ -11,7 +11,7 @@ function obtainTables () {
 function tableSuccess (d) {
   console.log(d)
   const arr = d.map((element) => {
-    return [element.email, element.modelName, element.researchGroup, element.paperLink, element.STS_ca.combined_score, element.POS.F1, element.VilaQuAD.total, element.ViquiQuAD.total, element.XQuAD_Ca.total, element.TeCla.Accuracy, element.TECa.Accuracy, element.AnCora_ca.F1]
+    return [element.email, element.modelName, element.researchGroup, element.paperLink, /\d+\.\d{2}/.exec(element.STS_ca.combined_score), /\d+\.\d{2}/.exec(element.POS.F1), /\d+\.\d{2}/.exec(element.VilaQuAD.exact) + '/' + /\d+\.\d{2}/.exec(element.VilaQuAD.f1), /\d+\.\d{2}/.exec(element.ViquiQuAD.exact) + '/' + /\d+\.\d{2}/.exec(element.ViquiQuAD.f1), /\d+\.\d{2}/.exec(element.XQuAD_Ca.exact) + '/' + /\d+\.\d{2}/.exec(element.XQuAD_Ca.f1), /\d+\.\d{2}/.exec(element.TeCla.Accuracy), /\d+\.\d{2}/.exec(element.TECa.Accuracy), /\d+\.\d{2}/.exec(element.AnCora_ca.F1)]
     // return {email: element.email}
     // return {
     // email: element.email,
