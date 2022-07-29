@@ -41,7 +41,7 @@ function tableSuccess (d) {
           innerTable += '<td>' + (elem + 1)
           break
         case 3:
-          innerTable += '<td><a href=' + arr[elem][innerElem] + '>' + arr[elem][innerElem]
+          innerTable += '<td><a target="_blank" href=' + arr[elem][innerElem] + '>' + arr[elem][innerElem]
           break
         case 2:
           innerTable += '<td>' + arr[elem][innerElem] // + '<br>' + arr[elem][0]
