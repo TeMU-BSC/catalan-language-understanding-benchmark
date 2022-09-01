@@ -4,7 +4,7 @@ block title
   title Datasets - CLUB
 
 block description
-  meta(name='description', content='The Catalan Language Understanding Benchmark (CLUB) is a new reading comprehension dataset, consisting of questions posed by crowdworkers on a set of Wikipedia articles, where the answer to every question is a segment of text, or span, from the corresponding reading passage. With 100,000+ question-answer pairs on 500+ articles, SQuAD is significantly larger than previous reading comprehension datasets.')
+  meta(name='description', content='CLUB Dataset sources and information')
 
 block extralinks
   link(rel='stylesheet', href='./stylesheets/index.css')
@@ -12,11 +12,10 @@ block extralinks
 block extrascripts
 
 mixin fill_text(texts)
-    each text, title in texts
-      div.datasetHolder
-        p
-          b #{title}
-        p #{text}
+    each pair in texts
+        div.datasetHolder(id=pair.id)
+            h3 #{pair.title}
+            p #{pair.text}
 
 block content
   .cover#contentCover
