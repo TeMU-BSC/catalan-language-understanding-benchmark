@@ -25,7 +25,7 @@ function tableSuccess (d) {
     // task5: element.task5
     // }
   })
-  const headers = ['Rank', 'Model', 'Group', 'Paper', 'STS', 'POS', 'VilaQuAD', 'ViquiQuAD', 'XQuAD', 'TECa', 'TeCla', 'AnCora']
+  const headers = ['Rank', 'Model', 'Group', 'Paper', 'STS', 'POS', 'VilaQuAD', 'ViquiQuAD', 'XQuAD', 'TECa', 'TeCla', 'NER']
 
   let innerTable = '<table class="table performanceTable">'
   innerTable += '<tr>'
