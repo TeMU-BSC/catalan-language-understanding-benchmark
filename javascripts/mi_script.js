@@ -30,7 +30,7 @@ function tableSuccess (d) {
   let innerTable = '<table class="table performanceTable">'
   innerTable += '<tr>'
   $(headers).each(function (header) {
-    console.log(header)
+    // console.log(header)
     if (header > 3) {
       innerTable += '<th>' + '<a href="datasets.html#' + headers[header].toLowerCase() + '">' + headers[header]
     } else {
