@@ -12,7 +12,19 @@ function obtainTables () {
 function tableSuccess (d) {
   // console.log(d)
   const arr = d.map((element) => {
-    return [element.email, element.modelName, element.researchGroup, element.paperLink, /\d+\.\d{2}/.exec(element.STS_ca.combined_score), /\d+\.\d{2}/.exec(element.POS.F1), /\d+\.\d{2}/.exec(element.CatalanQA_results.exact) + '/' + /\d+\.\d{2}/.exec(element.CatalanQA_results.f1), /\d+\.\d{2}/.exec(element.XQuAD_Ca.exact) + '/' + /\d+\.\d{2}/.exec(element.XQuAD_Ca.f1), /\d+\.\d{2}/.exec(element.TeCla.Accuracy), /\d+\.\d{2}/.exec(element.TECa.Accuracy), /\d+\.\d{2}/.exec(element.AnCora_ca.F1)]
+    return [
+      element.email,
+      element.modelName,
+      element.researchGroup,
+      element.paperLink,
+      /\d+\.\d{2}/.exec(element.AnCora_ca.F1),
+      /\d+\.\d{2}/.exec(element.POS.F1),
+      /\d+\.\d{2}/.exec(element.STS_ca.combined_score),
+      /\d+\.\d{2}/.exec(element.TeCla.Accuracy),
+      /\d+\.\d{2}/.exec(element.TECa.Accuracy),
+      /\d+\.\d{2}/.exec(element.CatalanQA_results.f1) + '/' + /\d+\.\d{2}/.exec(element.CatalanQA_results.exact),
+      /\d+\.\d{2}/.exec(element.XQuAD_Ca.f1) + '/' + /\d+\.\d{2}/.exec(element.XQuAD_Ca.exact)
+    ]
     // return {email: element.email}
     // return {
     // email: element.email,
@@ -26,7 +38,7 @@ function tableSuccess (d) {
     // task5: element.task5
     // }
   })
-  const headers = ['Rank', 'Model', 'Group', 'Paper', 'STS', 'POS', 'CatalanQa', 'XQuAD', 'TECa', 'TeCla', 'NER']
+  const headers = ['Rank', 'Model', 'Group', 'Paper', 'NER (F1)', 'STS (F1)', 'POS (Comb.)', 'TECa (Acc.)', 'TeCla (Acc.)', 'CatalanQa (F1/EM)', 'XQuAD (F1/EM)' ]
 
   let innerTable = '<table class="table performanceTable">'
   innerTable += '<tr>'
