@@ -60,6 +60,7 @@ function submitForm (e) {
     $('#submit_button').val('Submit')
     $.ajax({
       url: 'https://bsclsaina01.bsc.es/clubapi/results',
+      //url: 'http://localhost:3000/api/results',
       type: 'POST',
       data: formData,
       processData: false,
