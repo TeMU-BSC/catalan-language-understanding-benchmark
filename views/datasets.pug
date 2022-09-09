@@ -12,10 +12,10 @@ block extralinks
 block extrascripts
 
 mixin fill_text(texts)
-    each pair in texts
-        div.datasetHolder(id=pair.id)
-            h3 #{pair.title}
-            p #{pair.text}
+    each element in texts
+        div.datasetHolder(id=element.id)
+            h3 #{element.title}
+            p #{element.text}
 
 block content
   .cover#contentCover
