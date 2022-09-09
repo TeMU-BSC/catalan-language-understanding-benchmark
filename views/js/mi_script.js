@@ -39,13 +39,14 @@ function tableSuccess (d) {
     // }
   })
   const headers = ['Rank', 'Model', 'Group', 'Paper', 'NER (F1)', 'STS (F1)', 'POS (Comb.)', 'TECa (Acc.)', 'TeCla (Acc.)', 'CatalanQa (F1/EM)', 'XQuAD (F1/EM)' ]
+  const id_href = ['', '', '', '', 'ner', 'sts', 'pos', 'teca', 'tecla', 'catalanqa', 'xquad']
 
   let innerTable = '<table class="table performanceTable">'
   innerTable += '<tr>'
   $(headers).each(function (header) {
     // console.log(header)
     if (header > 3) {
-      innerTable += '<th>' + '<a href="datasets.html#' + headers[header].toLowerCase() + '">' + headers[header]
+      innerTable += '<th>' + '<a href="datasets.html#' + id_href[header].toLowerCase() + '">' + headers[header]
     } else {
       innerTable += '<th>' + headers[header]
     }
