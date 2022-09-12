@@ -450,6 +450,9 @@ ul {
 hr {
   margin: 20px auto;
 }
+.material-symbols-outlined {
+  font-size: 20px !important;
+}
 @media (max-width: 768px) {
   .pad-side {
     padding: 0px 10px;
