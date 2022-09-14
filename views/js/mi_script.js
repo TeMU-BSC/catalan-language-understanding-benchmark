@@ -38,7 +38,7 @@ function tableSuccess (d) {
     // task5: element.task5
     // }
   })
-  const headers = ['Rank', 'Model', 'Group', 'Paper', 'NER (F1)', 'STS (F1)', 'POS (Comb.)', 'TECa (Acc.)', 'TeCla (Acc.)', 'CatalanQa (F1/EM)', 'XQuAD (F1/EM)' ]
+  const headers = ['Rank', 'Model', 'Group', 'Paper', 'NER (F1)', 'STS-ca (F1)', 'POS (Comb.)', 'TE-Ca (Acc.)', 'TeCla (Acc.)', 'CatalanQA (F1/EM)', 'XQuAD-ca (F1/EM)']
   const id_href = ['', '', '', '', 'ner', 'sts', 'pos', 'teca', 'tecla', 'catalanqa', 'xquad']
 
   let innerTable = '<table class="table performanceTable">'
