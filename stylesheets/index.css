@@ -167,6 +167,10 @@ pre {
   margin: 20px 0;
   white-space: pre-wrap;
 }
+.datasetHolder h3 {
+  font-size: 1.3em;
+  font-weight: 600;
+}
 #contentCover .performanceTable {
   margin: 10px 0px;
 }
