@@ -1,19 +1,17 @@
 {
-  "name": "squad-explorer",
-  "description": "",
+  "name": "CLUB",
+  "description": "CLUB Site",
   "main": "gulpfile.js",
   "authors": [
-    "Pranav Rajpurkar"
+    "Projecte AINA"
   ],
-  "license": "ISC",
-  "homepage": "https://github.com/rajpurkar/SQuAD-explorer",
+  "license": "MIT",
+  "homepage": "https://github.com/projecte-aina/catalan-language-understanding-benchmark",
   "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "bower_components"
   ],
   "dependencies": {
     "bootstrap": "^3.3.7",
