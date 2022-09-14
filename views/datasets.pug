@@ -15,7 +15,11 @@ block extrascripts
 mixin fill_text(texts)
     each element in texts
         div.datasetHolder(id=element.id)
-            h3 #{element.title}
+            if element.link
+                h3
+                    a(href=element.link) #{element.title}
+            else
+                h3 #{element.title}
             p #{element.text}
 
 block content
@@ -27,4 +31,5 @@ block content
             .infoBody
               .infoHeadline
               h2 Datasets
+              hr
               +fill_text(test1)
