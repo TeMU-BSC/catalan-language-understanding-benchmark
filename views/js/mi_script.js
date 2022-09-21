@@ -25,20 +25,20 @@ function tableSuccess (d) {
       /\d+\.\d{2}/.exec(element.CatalanQA_results.f1) + '/' + /\d+\.\d{2}/.exec(element.CatalanQA_results.exact),
       /\d+\.\d{2}/.exec(element.XQuAD_Ca.f1) + '/' + /\d+\.\d{2}/.exec(element.XQuAD_Ca.exact)
     ]
-    // return {email: element.email}
-    // return {
-    // email: element.email,
-    // modelName: element.modelName,
-    // researchGroup: element.researchGroup,
-    // paperLink: element.paperLink,
-    // task1: element.task1,
-    // task2: element.task2,
-    // task3: element.task3,
-    // task4: element.task4,
-    // task5: element.task5
-    // }
   })
-  const headers = ['Rank', 'Model', 'Group', 'Paper', 'NER (F1)', 'POS (F1)', 'STS-ca (Comb.)', 'TeCla (Acc.)', 'TE-Ca (Acc.)', 'CatalanQA (F1/EM)', 'XQuAD-ca (F1/EM)']
+  const headers = [
+    'Rank',
+    'Model',
+    'Group',
+    'Paper',
+    'NER (F1)',
+    'POS (F1)',
+    'STS-ca (Comb.)',
+    'TeCla (Acc.)',
+    'TE-Ca (Acc.)',
+    'CatalanQA (F1/EM)',
+    'XQuAD-ca (F1/EM)'
+  ]
   const id_href = ['', '', '', '', 'ner', 'pos', 'sts', 'tecla', 'teca', 'catalanqa', 'xquad']
 
   let innerTable = '<table class="table performanceTable">'
