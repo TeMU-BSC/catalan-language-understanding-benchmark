@@ -17,28 +17,28 @@ function tableSuccess (d) {
       element.modelName,
       element.researchGroup,
       element.paperLink,
-      /\d+\.\d{2}/.exec(element.AnCora_ca.F1),
-      /\d+\.\d{2}/.exec(element.POS.F1),
-      /\d+\.\d{2}/.exec(element.STS_ca.combined_score),
-      /\d+\.\d{2}/.exec(element.TeCla.Accuracy),
-      /\d+\.\d{2}/.exec(element.TECa.Accuracy),
-      /\d+\.\d{2}/.exec(element.CatalanQA_results.f1) + '/' + /\d+\.\d{2}/.exec(element.CatalanQA_results.exact),
-      /\d+\.\d{2}/.exec(element.XQuAD_Ca.f1) + '/' + /\d+\.\d{2}/.exec(element.XQuAD_Ca.exact)
+      Number(/\d+\.\d{3}/.exec(element.AnCora_ca.F1)).toPrecision(4).toString(),
+      Number(/\d+\.\d{3}/.exec(element.POS.F1)).toPrecision(4).toString(),
+      Number(/\d+\.\d{3}/.exec(element.STS_ca.combined_score)).toPrecision(4).toString(),
+      Number(/\d+\.\d{3}/.exec(element.TeCla.Accuracy)).toPrecision(4).toString(),
+      Number(/\d+\.\d{3}/.exec(element.TECa.Accuracy)).toPrecision(4).toString(),
+      Number(/\d+\.\d{3}/.exec(element.CatalanQA_results.f1)).toPrecision(4).toString() + '/' + Number(/\d+\.\d{3}/.exec(element.CatalanQA_results.exact)).toPrecision(4).toString(),
+      Number(/\d+\.\d{3}/.exec(element.XQuAD_Ca.f1)).toPrecision(4).toString() + '/' + Number(/\d+\.\d{3}/.exec(element.XQuAD_Ca.exact)).toPrecision(4).toString()
     ]
-    // return {email: element.email}
-    // return {
-    // email: element.email,
-    // modelName: element.modelName,
-    // researchGroup: element.researchGroup,
-    // paperLink: element.paperLink,
-    // task1: element.task1,
-    // task2: element.task2,
-    // task3: element.task3,
-    // task4: element.task4,
-    // task5: element.task5
-    // }
   })
-  const headers = ['Rank', 'Model', 'Group', 'Paper', 'NER (F1)', 'POS (F1)', 'STS-ca (Comb.)', 'TeCla (Acc.)', 'TE-Ca (Acc.)', 'CatalanQA (F1/EM)', 'XQuAD-ca (F1/EM)']
+  const headers = [
+    'Rank',
+    'Model',
+    'Group',
+    'Paper',
+    'NER (F1)',
+    'POS (F1)',
+    'STS-ca (Comb.)',
+    'TeCla (Acc.)',
+    'TE-Ca (Acc.)',
+    'CatalanQA (F1/EM)',
+    'XQuAD-ca (F1/EM)'
+  ]
   const id_href = ['', '', '', '', 'ner', 'pos', 'sts', 'tecla', 'teca', 'catalanqa', 'xquad']
 
   let innerTable = '<table class="table performanceTable">'
