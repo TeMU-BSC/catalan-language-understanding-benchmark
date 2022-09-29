@@ -9,11 +9,24 @@ cc.run({
 	autoclear_cookies: true,
 	onAccept: function() {},
 	onChange: function(cookie) {},
+	gui_options: {
+        consent_modal: {
+            layout: 'bar',               // box/cloud/bar
+            position: 'bottom',     // bottom/middle/top + left/right/center
+            transition: 'slide',           // zoom/slide
+            swap_buttons: false            // enable to invert buttons
+        },
+        settings_modal: {
+            layout: 'box',                 // box/bar
+            // position: 'left',           // left/right
+            transition: 'slide'            // zoom/slide
+        }
+    },
 	languages : {
 		'en' : {	
 			consent_modal : {
-				title :  "We use cookies",
-				description :  'Some description',
+				title :  "Cookies",
+				description :  'We use cookies to keep track of files and inputs you\'ve sent us through the form to submit data.',
 				primary_btn: {
 					text: 'Accept all',
 					role: 'accept_all'
