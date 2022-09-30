@@ -17,7 +17,7 @@ mixin fill_text(texts)
         div.datasetHolder(id=element.id)
             if element.link
                 h3
-                    a(href=element.link) #{element.title}
+                    a(href=element.link target="_blank") #{element.title}
             else
                 h3 #{element.title}
             p #{element.text}
