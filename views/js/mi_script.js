@@ -17,13 +17,13 @@ function tableSuccess (d) {
       element.modelName,
       element.researchGroup,
       element.paperLink,
-      Number(/\d+\.\d{3}/.exec(element.AnCora_ca.F1)).toPrecision(4).toString(),
-      Number(/\d+\.\d{3}/.exec(element.POS.F1)).toPrecision(4).toString(),
-      Number(/\d+\.\d{3}/.exec(element.STS_ca.combined_score)).toPrecision(4).toString(),
-      Number(/\d+\.\d{3}/.exec(element.TeCla.Accuracy)).toPrecision(4).toString(),
-      Number(/\d+\.\d{3}/.exec(element.TECa.Accuracy)).toPrecision(4).toString(),
-      Number(/\d+\.\d{3}/.exec(element.CatalanQA_results.f1)).toPrecision(4).toString() + '/' + Number(/\d+\.\d{3}/.exec(element.CatalanQA_results.exact)).toPrecision(4).toString(),
-      Number(/\d+\.\d{3}/.exec(element.XQuAD_Ca.f1)).toPrecision(4).toString() + '/' + Number(/\d+\.\d{3}/.exec(element.XQuAD_Ca.exact)).toPrecision(4).toString()
+      Number(/\d+\.\d{1,2,3}/.exec(element.AnCora_ca.F1)).toPrecision(4).toString(),
+      Number(/\d+\.\d{1,2,3}/.exec(element.POS.F1)).toPrecision(4).toString(),
+      Number(/\d+\.\d{1,2,3}/.exec(element.STS_ca.combined_score)).toPrecision(4).toString(),
+      Number(/\d+\.\d{1,2,3}/.exec(element.TeCla.Accuracy)).toPrecision(4).toString(),
+      Number(/\d+\.\d{1,2,3}/.exec(element.TECa.Accuracy)).toPrecision(4).toString(),
+      Number(/\d+\.\d{1,2,3}/.exec(element.CatalanQA_results.f1)).toPrecision(4).toString() + '/' + Number(/\d+\.\d{3}/.exec(element.CatalanQA_results.exact)).toPrecision(4).toString(),
+      Number(/\d+\.\d{1,2,3}/.exec(element.XQuAD_Ca.f1)).toPrecision(4).toString() + '/' + Number(/\d+\.\d{3}/.exec(element.XQuAD_Ca.exact)).toPrecision(4).toString()
     ]
   })
   const headers = [
