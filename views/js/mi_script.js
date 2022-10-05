@@ -11,6 +11,10 @@ function obtainTables () {
 
 function tableSuccess (d) {
   // console.log(d)
+	// const sorted_objects = [...d].sort(function (a, b) {
+	// 	  return (a.scores.reduce((c, z) => c + z)/a.scores.length) - (b.scores.reduce((c, z) => c + z)/b.scores.length)
+	// }).reverse()
+	console.log(sorted_objects)
   const arr = d.map((element) => {
     return [
       element.email,
