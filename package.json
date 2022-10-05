@@ -31,5 +31,8 @@
   "bugs": {
     "url": "https://github.com/TeMU-BSC/catalan-language-understanding-benchmark/issues"
   },
-  "homepage": "https://github.com/TeMU-BSC/catalan-language-understanding-benchmark"
+  "homepage": "https://github.com/TeMU-BSC/catalan-language-understanding-benchmark",
+  "devDependencies": {
+    "eslint": "^8.24.0"
+  }
 }
