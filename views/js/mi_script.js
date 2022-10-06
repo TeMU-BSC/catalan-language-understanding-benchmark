@@ -10,14 +10,13 @@ function obtainTables () {
 }
 
 function tableSuccess (d) {
-  console.log(d)
 	// const sorted_objects = [...d].sort(function (a, b) {
 	// 	  return (a.scores.reduce((c, z) => c + z)/a.scores.length) - (b.scores.reduce((c, z) => c + z)/b.scores.length)
 	// }).reverse()
 	// console.log(sorted_objects)
 	let arr = d.map((element) => {
 		return [
-			element.email,
+			// element.email,
 			element.modelName,
 			element.researchGroup,
 			element.paperLink,
@@ -30,56 +29,60 @@ function tableSuccess (d) {
 			Number(element.XQuAD_Ca.f1).toPrecision(4).toString() + '/' + Number(element.XQuAD_Ca.exact).toPrecision(4).toString()
 		]
 	})
-
 	console.log(arr)
-//	 const headers = [
-//	   // 'Rank',
-//	   'Model',
-//	   'Submitted By',
-//	   'Paper',
-//	   'NER (F1)',
-//		'POS (F1)',
-//	   'STS-ca (Comb.)',
-//	   'TeCla (Acc.)',
-//	   'TE-Ca (Acc.)',
-//	   'CatalanQA (F1/EM)',
-//	   'XQuAD-ca (F1/EM)'
-//	 ]
-//	 const id_href = ['', '', '', '', 'ner', 'pos', 'sts', 'tecla', 'teca', 'catalanqa', 'xquad']
 
-//	 let innerTable = '<table class="table performanceTable">'
-//	 innerTable += '<tr>'
-//	 $(headers).each(function (header) {
-//	   // console.log(header)
-//	   if (header > 3) {
-//	     innerTable += '<th>' + '<a href="datasets.html#' + id_href[header].toLowerCase() + '">' + headers[header]
-//	   } else {
-//	     innerTable += '<th>' + headers[header]
-//	   }
-//	 })
+	const headers = [
+		// 'Rank',
+		'Model',
+		'Submitted By',
+		'Paper',
+		'NER (F1)',
+		'POS (F1)',
+		'STS-ca (Comb.)',
+		'TeCla (Acc.)',
+		'TE-Ca (Acc.)',
+		'CatalanQA (F1/EM)',
+		'XQuAD-ca (F1/EM)'
+	]
+	const id_href = ['', '', '', 'ner', 'pos', 'sts', 'tecla', 'teca', 'catalanqa', 'xquad']
 
-//	 $(arr).each(function (elem) {
-//	   innerTable += '<tr>'
-//	   $(arr[elem]).each(function (innerElem) {
-//	     switch (innerElem) {
-//	       case 0:
-//	         innerTable += '<td>' + (elem + 1)
-//	         break
-//	       case 3:
-//	         innerTable += '<td><a target="_blank" href=' + arr[elem][innerElem] + '><span class="material-symbols-outlined">open_in_new'
-//	         break
-//	       case 2:
-//	         innerTable += '<td>' + arr[elem][innerElem] // + '<br>' + arr[elem][0]
-//	         break
-//	       default:
-//	         innerTable += '<td>' + arr[elem][innerElem]
-//	     }
-//	   })
-//	 })
-	let table = new Tabulator("#leaderboard", {
-		data:arr,
-		autoColumns:true,
-		responsiveLayout:"hide",
+	let innerTable = '<table id="table" class="table performanceTable">'
+	innerTable += '<tr>'
+	$(headers).each(function (header) {
+	  // console.log(header)
+	  if (header > 2) {
+	    innerTable += '<th>' + '<a href="datasets.html#' + id_href[header].toLowerCase() + '">' + headers[header]
+	  } else {
+	    innerTable += '<th>' + headers[header]
+	  }
+	})
+	$(arr).each(function (elem) {
+		innerTable += '<tr>'
+		$(arr[elem]).each(function (innerElem) {
+			switch (innerElem) {
+				// case 0:
+					// innerTable += '<td>' + (elem + 1)
+					// break
+				case 2:
+					if (arr[elem][innerElem] != '') {
+						innerTable += '<td><a target="_blank" href=' + arr[elem][innerElem] + '><span class="material-symbols-outlined">open_in_new'
+					} else {
+						innerTable += '<td>'
+					}
+					break
+				case 1:
+					innerTable += '<td>' + arr[elem][innerElem] // + '<br>' + arr[elem][0]
+					break
+				default:
+					innerTable += '<td>' + arr[elem][innerElem]
+			}
+		})
+	})
+	$('#leaderboard').html(innerTable)
+	let table = new Tabulator("#table", {
+		autoColumnsDefinitions:{
+			paperLink: {formatter:"link"}
+		}
 	});
 }
 
@@ -90,6 +93,5 @@ function tableError (e) {
 $(document).ready(() => {
 	obtainTables();
 	// console.log(':', tableData)
-
   // console.log(arr)
 })

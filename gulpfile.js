@@ -83,5 +83,5 @@ gulp.task('correct_link_paths', gulp.series('generate'), async function () {
 
 
 gulp.task('default', gulp.series('generate', 'correct_link_paths', 'image', 'js', 'css'))
-
+gulp.task('html', gulp.series('generate', 'js'))
 
