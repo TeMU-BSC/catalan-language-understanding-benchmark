@@ -29,7 +29,7 @@ function tableSuccess (d) {
   const headers = [
     'Rank',
     'Model',
-    'Group',
+    'Submitted by',
     'Paper',
     'NER (F1)',
     'POS (F1)',
