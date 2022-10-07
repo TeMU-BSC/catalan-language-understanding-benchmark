@@ -29,7 +29,7 @@ function tableSuccess (d) {
 			Number(element.XQuAD_Ca.f1).toPrecision(4).toString() + '/' + Number(element.XQuAD_Ca.exact).toPrecision(4).toString()
 		]
 	})
-	console.log(arr)
+	console.log('arr:', arr)
 
 	const headers = [
 		// 'Rank',
@@ -47,15 +47,16 @@ function tableSuccess (d) {
 	const id_href = ['', '', '', 'ner', 'pos', 'sts', 'tecla', 'teca', 'catalanqa', 'xquad']
 
 	let innerTable = '<table id="table" class="table performanceTable">'
-	innerTable += '<tr>'
+	innerTable += '<thead><tr>'
 	$(headers).each(function (header) {
 	  // console.log(header)
 	  if (header > 2) {
-	    innerTable += '<th>' + '<a href="datasets.html#' + id_href[header].toLowerCase() + '">' + headers[header]
+	    innerTable += '<th>' + '<a href="datasets.html#' + id_href[header].toLowerCase() + '">' + headers[header] + "</a></th>"
 	  } else {
-	    innerTable += '<th>' + headers[header]
+	    innerTable += '<th>' + headers[header] + "</th>"
 	  }
 	})
+	innerTable += "</tr></thead></tbody>"
 	$(arr).each(function (elem) {
 		innerTable += '<tr>'
 		$(arr[elem]).each(function (innerElem) {
@@ -65,25 +66,37 @@ function tableSuccess (d) {
 					// break
 				case 2:
 					if (arr[elem][innerElem] != '') {
-						innerTable += '<td><a target="_blank" href=' + arr[elem][innerElem] + '><span class="material-symbols-outlined">open_in_new'
+						innerTable += '<td><a target="_blank" href=' + arr[elem][innerElem] + '><span class="material-symbols-outlined">open_in_new</span></a></td>'
 					} else {
-						innerTable += '<td>'
+						innerTable += '<td></td>'
 					}
 					break
 				case 1:
-					innerTable += '<td>' + arr[elem][innerElem] // + '<br>' + arr[elem][0]
+					innerTable += '<td>' + arr[elem][innerElem] + "</td>" // + '<br>' + arr[elem][0]
 					break
 				default:
-					innerTable += '<td>' + arr[elem][innerElem]
+					innerTable += '<td>' + arr[elem][innerElem] + '</td>'
 			}
 		})
+		innerTable += "</tr>"
 	})
+	innerTable += "</tbody></table>"
 	$('#leaderboard').html(innerTable)
+	console.log('innerTable:', innerTable)
 	let table = new Tabulator("#table", {
-		autoColumnsDefinitions:{
-			paperLink: {formatter:"link"}
-		}
-	});
+		columns:[
+			{title:"Model"},
+			{title:"Submitted By"},
+			{title:"Paper", formatter:"html"},
+			{title:"NER (F1)"},
+			{title:"POS (F1)"},
+			{title:"STS-ca (Comb.)"},
+			{title:"TeCla (Acc.)"},
+			{title:"TE-Ca (Acc.)"},
+			{title:"CatalanQA (F1/EM)"},
+			{title:"XQuAD-ca (F1/EM)"},
+		],
+	})
 }
 
 function tableError (e) {
