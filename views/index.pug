@@ -9,9 +9,11 @@ block description
 block extralinks
 	link(rel='stylesheet', href='./stylesheets/index.css')
 	link(rel="stylesheet", href="https://unpkg.com/tabulator-tables@5.4.0/dist/css/tabulator_simple.min.css")
-	script(src="https://unpkg.com/tabulator-tables@5.4.0/dist/js/tabulator.min.js")
+	link(rel="stylesheet", href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css")
 	script(async defer src="https://buttons.github.io/buttons.js")
 	script(src="./javascripts/mi_script.js")
+	script(src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js")
+	script(src="https://unpkg.com/tabulator-tables@5.4.0/dist/js/tabulator.min.js")
 
 
 block content
@@ -25,30 +27,6 @@ block content
 					h2 Leaderboard
 					p.spaced CLUB tests the ability of a system in the Catalan language. Below are the results of the different models.
 					div#leaderboard
-						table#example-table
-							thead
-								tr
-									th(width='200') Name
-									th Age
-									th Gender
-									th Height
-									th Favourite Color
-									th Date of Birth
-							tbody
-								tr
-									td Billy Bob
-									td 12
-									td male
-									td 1
-									td red
-									td
-								tr
-									td Mary May
-									td 1
-									td female
-									td 2
-									td blue
-									td 14/05/1982
 
 					p#sendResults
 					a(href="./submit.html") SEND YOUR RESULTS
