@@ -10,10 +10,6 @@ function obtainTables () {
 }
 
 function tableSuccess (d) {
-	// const sorted_objects = [...d].sort(function (a, b) {
-	// 	  return (a.scores.reduce((c, z) => c + z)/a.scores.length) - (b.scores.reduce((c, z) => c + z)/b.scores.length)
-	// }).reverse()
-	// console.log(sorted_objects)
 	let arr = d.map((element) => {
 		return [
 			// element.email,
@@ -50,11 +46,11 @@ function tableSuccess (d) {
 	innerTable += '<thead><tr>'
 	$(headers).each(function (header) {
 	  // console.log(header)
-//	  if (header > 2) {
-//	    innerTable += '<th>' + '<a href="datasets.html#' + id_href[header].toLowerCase() + '">' + headers[header] + "</a></th>"
-//	  } else {
+	  if (header > 2) {
+	    innerTable += '<th>' + '<a href="datasets.html#' + id_href[header].toLowerCase() + '">' + headers[header] + "</a></th>"
+	  } else {
 	    innerTable += '<th>' + headers[header] + "</th>"
-//	  }
+	  }
 	})
 	innerTable += "</tr></thead></tbody>"
 	$(arr).each(function (elem) {
@@ -82,21 +78,9 @@ function tableSuccess (d) {
 	})
 	innerTable += "</tbody></table>"
 	$('#leaderboard').html(innerTable)
-	//console.log('innerTable:', innerTable)
-	let table = new Tabulator("#table", {
-		columns:[
-			{title:"Model"},
-			{title:"Submitted By"},
-			{title:"Paper", formatter:"html"},
-			{title:"NER (F1)"},
-			{title:"POS (F1)"},
-			{title:"STS-ca (Comb.)"},
-			{title:"TeCla (Acc.)"},
-			{title:"TE-Ca (Acc.)"},
-			{title:"CatalanQA (F1/EM)"},
-			{title:"XQuAD-ca (F1/EM)"},
-		],
-	})
+	$('#table').DataTable({
+		"paging": false
+	});
 }
 
 function tableError (e) {
@@ -105,6 +89,4 @@ function tableError (e) {
 
 $(document).ready(() => {
 	obtainTables();
-	// console.log(':', tableData)
-  // console.log(arr)
 })
