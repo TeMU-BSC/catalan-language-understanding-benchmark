@@ -50,11 +50,11 @@ function tableSuccess (d) {
 	innerTable += '<thead><tr>'
 	$(headers).each(function (header) {
 	  // console.log(header)
-	  if (header > 2) {
-	    innerTable += '<th>' + '<a href="datasets.html#' + id_href[header].toLowerCase() + '">' + headers[header] + "</a></th>"
-	  } else {
+//	  if (header > 2) {
+//	    innerTable += '<th>' + '<a href="datasets.html#' + id_href[header].toLowerCase() + '">' + headers[header] + "</a></th>"
+//	  } else {
 	    innerTable += '<th>' + headers[header] + "</th>"
-	  }
+//	  }
 	})
 	innerTable += "</tr></thead></tbody>"
 	$(arr).each(function (elem) {
@@ -82,7 +82,7 @@ function tableSuccess (d) {
 	})
 	innerTable += "</tbody></table>"
 	$('#leaderboard').html(innerTable)
-	console.log('innerTable:', innerTable)
+	//console.log('innerTable:', innerTable)
 	let table = new Tabulator("#table", {
 		columns:[
 			{title:"Model"},
