@@ -8,12 +8,10 @@ block description
 
 block extralinks
 	link(rel='stylesheet', href='./stylesheets/index.css')
-	link(rel="stylesheet", href="https://unpkg.com/tabulator-tables@5.4.0/dist/css/tabulator_simple.min.css")
-	link(rel="stylesheet", href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css")
+	link(rel="stylesheet", href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css")
 	script(async defer src="https://buttons.github.io/buttons.js")
 	script(src="./javascripts/mi_script.js")
-	script(src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js")
-	script(src="https://unpkg.com/tabulator-tables@5.4.0/dist/js/tabulator.min.js")
+	script(src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js")
 
 
 block content
@@ -28,7 +26,8 @@ block content
 					p.spaced CLUB tests the ability of a system in the Catalan language. Below are the results of the different models.
 					div#leaderboard
 
-					p#sendResults
+					br
+					p#sendResults(style="text-align:right;")
 						a(href="./submit.html")
 							button.submitButton SEND YOUR RESULTS
 		.col-md-15
