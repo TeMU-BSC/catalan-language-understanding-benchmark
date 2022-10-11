@@ -79,7 +79,12 @@ function tableSuccess (d) {
 	innerTable += "</tbody></table>"
 	$('#leaderboard').html(innerTable)
 	$('#table').DataTable({
-		"paging": false
+		paging: false,
+		order: [[3, 'desc'], [4, 'desc'], [5, 'desc'], [6, 'desc'], [7, 'desc'], [8, 'desc'], [9, 'desc']],
+		columnDefs: [
+			{ targets: [0, 1, 2], orderable: false }
+		],
+		searching: false
 	});
 }
 
