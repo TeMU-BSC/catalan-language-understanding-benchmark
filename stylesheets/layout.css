@@ -253,9 +253,6 @@
   color: #eee;
   font-size: 1.6em;
 }
-.infoCard .infoBody p {
-  color: #eee;
-}
 .actionBtn:hover {
   background-color: #e40520;
   border-color: #e40520;
