@@ -82,7 +82,8 @@ function tableSuccess (d) {
 		paging: false,
 		order: [[3, 'desc'], [4, 'desc'], [5, 'desc'], [6, 'desc'], [7, 'desc'], [8, 'desc'], [9, 'desc']],
 		columnDefs: [
-			{ targets: [0, 1, 2], orderable: false }
+			{ targets: [0, 1, 2], orderable: false },
+			// { targets: 1, width: "25%" }
 		],
 		searching: false
 	});
