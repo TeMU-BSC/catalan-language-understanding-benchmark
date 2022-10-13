@@ -22,10 +22,10 @@ function tableSuccess (d) {
 			Number(element.TeCla.Accuracy).toPrecision(4).toString(),
 			Number(element.TECa.Accuracy).toPrecision(4).toString(),
 			Number(element.CatalanQA_results.f1).toPrecision(4).toString() + '/' + Number(element.CatalanQA_results.exact).toPrecision(4).toString(),
-			Number(element.XQuAD_Ca.f1).toPrecision(4).toString() + '/' + Number(element.XQuAD_Ca.exact).toPrecision(4).toString()
+			Number(element.XQuAD_Ca.f1).toPrecision(4).toString() + '/' + Number(element.XQuAD_Ca.exact).toPrecision(4).toString(),
+			Number(Number(element.sum) / Number(9)).toPrecision(4).toString()
 		]
 	})
-	console.log('arr:', arr)
 
 	const headers = [
 		// 'Rank',
@@ -38,15 +38,16 @@ function tableSuccess (d) {
 		'TeCla (Acc.)',
 		'TE-Ca (Acc.)',
 		'CatalanQA (F1/EM)',
-		'XQuAD-ca (F1/EM)'
+		'XQuAD-ca (F1/EM)',
+		'Score'
 	]
-	const id_href = ['', '', '', 'ner', 'pos', 'sts', 'tecla', 'teca', 'catalanqa', 'xquad']
+	const id_href = ['', '', '', 'ner', 'pos', 'sts', 'tecla', 'teca', 'catalanqa', 'xquad', '']
 
 	let innerTable = '<table id="table" class="table performanceTable">'
 	innerTable += '<thead><tr>'
 	$(headers).each(function (header) {
 	  // console.log(header)
-	  if (header > 2) {
+	  if (id_href[header] != '') {
 	    innerTable += '<th>' + '<a href="datasets.html#' + id_href[header].toLowerCase() + '">' + headers[header] + "</a></th>"
 	  } else {
 	    innerTable += '<th>' + headers[header] + "</th>"
@@ -80,7 +81,7 @@ function tableSuccess (d) {
 	$('#leaderboard').html(innerTable)
 	$('#table').DataTable({
 		paging: false,
-		order: [[3, 'desc'], [4, 'desc'], [5, 'desc'], [6, 'desc'], [7, 'desc'], [8, 'desc'], [9, 'desc']],
+		order: [],
 		columnDefs: [
 			{ targets: [0, 1, 2], orderable: false },
 			// { targets: 1, width: "25%" }
