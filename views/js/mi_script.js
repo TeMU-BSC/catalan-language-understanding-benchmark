@@ -47,7 +47,7 @@ function tableSuccess (d) {
 	innerTable += '<thead><tr>'
 	$(headers).each(function (header) {
 	  // console.log(header)
-	  if (header > 2) {
+	  if (id_href[header] != '') {
 	    innerTable += '<th>' + '<a href="datasets.html#' + id_href[header].toLowerCase() + '">' + headers[header] + "</a></th>"
 	  } else {
 	    innerTable += '<th>' + headers[header] + "</th>"
