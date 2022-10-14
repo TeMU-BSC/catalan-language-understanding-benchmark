@@ -43,7 +43,7 @@ function tableSuccess (d) {
 	]
 	const id_href = ['', '', '', '', 'ner', 'pos', 'sts', 'tecla', 'teca', 'catalanqa', 'xquad']
 
-	let innerTable = '<table id="table" class="table performanceTable">'
+	let innerTable = '<table id="table" class="performanceTable dataTable">'
 	innerTable += '<thead><tr>'
 	$(headers).each(function (header) {
 	  // console.log(header)
