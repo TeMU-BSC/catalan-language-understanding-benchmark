@@ -163,6 +163,22 @@ pre {
   border-color: #e40520;
   color: #fff;
 }
+.submitButton {
+  width: 20%;
+  background-color: #ffce2d;
+  color: #000;
+  text-align: center;
+  border: 2px solid #ffce2d;
+  padding: 15px;
+  border-radius: 30px;
+  transition: all 0.5s;
+  min-width: 75px;
+}
+.submitButton:hover {
+  background-color: #e40520;
+  border-color: #e40520;
+  color: #fff;
+}
 .datasetHolder {
   margin: 20px 0;
   white-space: pre-wrap;
@@ -201,5 +217,5 @@ p.spaced {
   text-align: right;
 }
 #leaderboard {
-  overflow: scroll;
+  overflow: auto;
 }

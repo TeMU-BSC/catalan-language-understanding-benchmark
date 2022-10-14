@@ -447,6 +447,9 @@ ul {
 hr {
   margin: 20px auto;
 }
+th {
+  vertical-align: middle;
+}
 .material-symbols-outlined {
   font-size: 20px !important;
 }
@@ -458,6 +461,11 @@ hr {
 @media (max-width: 768px) {
   [class*='col-'] {
     padding: 0px 0px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1350px;
   }
 }
 ::-webkit-scrollbar {

@@ -16,14 +16,14 @@ function tableSuccess (d) {
 			element.modelName,
 			element.researchGroup,
 			element.paperLink,
+			Number(Number(element.sum) / Number(9)).toPrecision(4).toString(),
 			Number(element.AnCora_ca.F1).toPrecision(4).toString(),
 			Number(element.POS.F1).toPrecision(4).toString(),
 			Number(element.STS_ca.combined_score).toPrecision(4).toString(),
 			Number(element.TeCla.Accuracy).toPrecision(4).toString(),
 			Number(element.TECa.Accuracy).toPrecision(4).toString(),
 			Number(element.CatalanQA_results.f1).toPrecision(4).toString() + '/' + Number(element.CatalanQA_results.exact).toPrecision(4).toString(),
-			Number(element.XQuAD_Ca.f1).toPrecision(4).toString() + '/' + Number(element.XQuAD_Ca.exact).toPrecision(4).toString(),
-			Number(Number(element.sum) / Number(9)).toPrecision(4).toString()
+			Number(element.XQuAD_Ca.f1).toPrecision(4).toString() + '/' + Number(element.XQuAD_Ca.exact).toPrecision(4).toString()
 		]
 	})
 
@@ -32,18 +32,18 @@ function tableSuccess (d) {
 		'Model',
 		'Submitted By',
 		'Paper',
+		'Score',
 		'NER (F1)',
 		'POS (F1)',
 		'STS-ca (Comb.)',
 		'TeCla (Acc.)',
 		'TE-Ca (Acc.)',
 		'CatalanQA (F1/EM)',
-		'XQuAD-ca (F1/EM)',
-		'Score'
+		'XQuAD-ca (F1/EM)'
 	]
-	const id_href = ['', '', '', 'ner', 'pos', 'sts', 'tecla', 'teca', 'catalanqa', 'xquad', '']
+	const id_href = ['', '', '', '', 'ner', 'pos', 'sts', 'tecla', 'teca', 'catalanqa', 'xquad']
 
-	let innerTable = '<table id="table" class="table performanceTable">'
+	let innerTable = '<table id="table" class="performanceTable dataTable">'
 	innerTable += '<thead><tr>'
 	$(headers).each(function (header) {
 	  // console.log(header)
@@ -67,9 +67,6 @@ function tableSuccess (d) {
 					} else {
 						innerTable += '<td></td>'
 					}
-					break
-				case 1:
-					innerTable += '<td>' + arr[elem][innerElem] + "</td>" // + '<br>' + arr[elem][0]
 					break
 				default:
 					innerTable += '<td>' + arr[elem][innerElem] + '</td>'
