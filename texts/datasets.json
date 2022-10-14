@@ -42,7 +42,7 @@
 	},
     "xquad": {
 		"title": "XQuAD-ca",
-		"text": "The Cross-lingual Question Answering Dataset is a multilingual benchmark for evaluating question-answering performance. The dataset consists of a subset of 240 paragraphs from the Wikipedia and 1,190 question-answer pairs from the development set of SQuAD v1.1 (Rajpurkar et al., 2016) together with their professional translations into ten languages: Spanish, German, Greek, Russian, Turkish, Arabic, Vietnamese, Thai, Chinese, and Hindi. Rumanian was added later. We created a Catalan version using professional translators.",
+		"text": "The Cross-lingual Question Answering Dataset is a multilingual benchmark for evaluating question-answering performance. The dataset consists of a subset of 240 paragraphs from the Wikipedia and 1,190 question-answer pairs from the development set of SQuAD v1.1 (Rajpurkar et al., 2016) together with their professional translations into ten languages: Spanish, German, Greek, Russian, Turkish, Arabic, Vietnamese, Thai, Chinese, and Hindi. Rumanian was added later. We created a Catalan version using professional translators.\nThe model for this task has been trained with CatalanQA and texted with XQuaD-ca.",
 		"id": "xquad",
 		"link": "https://huggingface.co/datasets/projecte-aina/xquad-ca"
 	}
