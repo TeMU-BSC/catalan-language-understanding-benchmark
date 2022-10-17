@@ -43,15 +43,17 @@ function tableSuccess (d) {
 	]
 	const id_href = ['', '', '', '', 'ner', 'pos', 'sts', 'tecla', 'teca', 'catalanqa', 'xquad']
 
-	let innerTable = '<table id="table" class="performanceTable dataTable">'
+	let innerTable = '<table id="table" class="performanceTable table">'
 	innerTable += '<thead><tr>'
 	$(headers).each(function (header) {
 	  // console.log(header)
 	  if (id_href[header] != '') {
 	    innerTable += '<th>' + '<a href="datasets.html#' + id_href[header].toLowerCase() + '">' + headers[header] + "</a></th>"
-	  } else {
+	  } else if (headers[header] === 'Paper') {
+	    innerTable += '<th style="width:30px;">' + headers[header] + "</th>"
+		} else {
 	    innerTable += '<th>' + headers[header] + "</th>"
-	  }
+		}
 	})
 	innerTable += "</tr></thead></tbody>"
 	$(arr).each(function (elem) {
@@ -78,10 +80,11 @@ function tableSuccess (d) {
 	$('#leaderboard').html(innerTable)
 	$('#table').DataTable({
 		paging: false,
+		autoWidth: false,
 		order: [],
 		columnDefs: [
 			{ targets: [0, 1, 2], orderable: false },
-			// { targets: 1, width: "25%" }
+			// { targets: 2, width: "20px" }
 		],
 		searching: false
 	});
