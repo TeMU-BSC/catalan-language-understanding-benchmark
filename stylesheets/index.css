@@ -189,6 +189,8 @@ pre {
 }
 .performanceTable {
   margin: 10px 0px;
+  border-bottom: 1px solid #fff;
+  border-collapse: collapse;
 }
 .performanceTable .institution {
   font-style: italic;
