@@ -84,7 +84,7 @@ function tableSuccess (d) {
 		order: [],
 		columnDefs: [
 			{ targets: [0, 1, 2], orderable: false },
-			// { targets: 2, width: "20px" }
+			{ targets: "_all", className: 'dt-center' }
 		],
 		searching: false
 	});
