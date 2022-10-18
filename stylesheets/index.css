@@ -179,6 +179,11 @@ pre {
   border-color: #e40520;
   color: #fff;
 }
+@media (max-width: 734px) {
+  .submitButton {
+    width: 100%;
+  }
+}
 .datasetHolder {
   margin: 20px 0;
   white-space: pre-wrap;
@@ -189,8 +194,6 @@ pre {
 }
 .performanceTable {
   margin: 10px 0px;
-  border-bottom: 1px solid #fff;
-  border-collapse: collapse;
 }
 .performanceTable .institution {
   font-style: italic;
@@ -199,9 +202,10 @@ pre {
 .performanceTable .date {
   font-weight: normal;
 }
-.performanceTable td,
-.performanceTable th {
+.performanceTable tbody td,
+.performanceTable thead th {
   max-width: 250px;
+  text-align: center;
 }
 ul.list-inline {
   margin-left: 0px;
