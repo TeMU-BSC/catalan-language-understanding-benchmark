@@ -81,7 +81,7 @@ function tableSuccess (d) {
 	$('#table').DataTable({
 		paging: false,
 		autoWidth: false,
-		order: [[3, desc]],
+		order: [[3, 'desc']],
 		columnDefs: [
 			{ targets: [0, 1, 2], orderable: false },
 			{ targets: "_all", className: 'dt-center' }
