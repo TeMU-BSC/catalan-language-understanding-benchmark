@@ -15,7 +15,7 @@ function tableSuccess (d) {
 			// element.email,
 			element.modelName,
 			element.researchGroup,
-			element.paperLink,
+			element.url,
 			Number(Number(element.sum) / Number(9)).toPrecision(4).toString(),
 			Number(element.AnCora_ca.F1).toPrecision(4).toString(),
 			Number(element.POS.F1).toPrecision(4).toString(),
@@ -31,7 +31,7 @@ function tableSuccess (d) {
 		// 'Rank',
 		'Model',
 		'Submitted By',
-		'Paper',
+		'URL',
 		'Score',
 		'NER (F1)',
 		'POS (F1)',
@@ -81,7 +81,7 @@ function tableSuccess (d) {
 	$('#table').DataTable({
 		paging: false,
 		autoWidth: false,
-		order: [],
+		order: [[3, desc]],
 		columnDefs: [
 			{ targets: [0, 1, 2], orderable: false },
 			{ targets: "_all", className: 'dt-center' }
