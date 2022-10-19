@@ -1,61 +1,60 @@
 extends layout
 
 block title
-  title Submit - CLUB
+	title Submit - CLUB
 
 block description
-  meta(name='description', content='Submitting-related information')
+	meta(name='description', content='Submitting-related information')
 
 block extralinks
-  link(rel='stylesheet', href='./stylesheets/index.css')
-  script(src='./javascripts/form.js')
-  // link(rel='stylesheet', href='./stylesheets/input.css')
+	link(rel='stylesheet', href='./stylesheets/index.css')
+	script(src='./javascripts/form.js')
+	// link(rel='stylesheet', href='./stylesheets/input.css')
 
 block content
-  .cover#contentCover
-    .container
-      .row
-        .infoCard
-         .infoBody
-            h1 Instructions for submitting
-            p To submit data fill the next form:
-            br
-            form#evaluation_form
-                div.form-group.has-error#emailDiv
-                    label.control-label(for='email') Mail (will not be displayed):
-                    input.form-control(type='email' id='email' name='email' placeholder='example@example.com' onchange='checkMail()' required)
-                div.form-group.has-error#modelNameDiv
-                    label.control-label(for='modelName') Model name:
-                    input.form-control(type='text' id='modelName' name='modelName' placeholder='Model Name' onchange='checkText(this)' required)
-                div.form-group.has-error#researchGroupDiv
-                    label.control-label(for='researchGroup') Research Group:
-                    input.form-control(type='text' id='researchGroup' name='researchGroup' placeholder='e.g: BSC' onchange='checkText(this)' required)
-                div.form-group.has-error#paperLinkDiv
-                    label.control-label(for='paperLink') Paper Link
-                    input.form-control(type='url' id='paperLink' name='paperLink' placeholder='Where is the paper (if any)' onchange='checkLink()')
-                hr
-                div.form-group.has-error#stsDiv
-                    label.control-label Upload STS_ca
-                    input(type='file' name='STS_ca' id='STS_ca' onchange='checkFile(this)' required)
-                div.form-group.has-error#posDiv
-                    label.control-label Upload POS
-                    input(type='file' name='POS' id='POS' onchange='checkFile(this)' required)
-                div.form-group.has-error#viquiquadDiv
-                    label.control-label Upload CatalanQa
-                    input(type='file' name='CatalanQa' id='CatalanQa' onchange='checkFile(this)' required)
-                div.form-group.has-error#xquadDiv
-                    label.control-label Upload XQuAD
-                    input(type='file' name='XQuAD' id='XQuAD' onchange='checkFile(this)' required)
-                div.form-group.has-error#teclaDiv
-                    label.control-label Upload TeCla
-                    input(type='file' name='TeCla' id='TeCla' onchange='checkFile(this)' required)
-                div.form-group.has-error#tecaDiv
-                    label.control-label Upload TECa
-                    input(type='file' name='TECa' id='TECa' onchange='checkFile(this)' required)
-                div.form-group.has-error#ancoraDiv
-                    label.control-label Upload NER
-                    input(type='file' name='AnCora' id='AnCora' onchange='checkFile(this)' required)
-                hr
-                input.submitButton#submit_button(type='button' value='Submit' onclick='submitForm()')
-
-
+	.cover#contentCover
+		.container
+			.row
+				.infoCard
+					.infoBody
+						h1 Instructions for submitting
+						p To submit data fill the next form:
+						br
+						form#evaluation_form
+						div.form-group.has-error#emailDiv
+							label.control-label(for='email') Mail (will not be displayed):
+							input.form-control(type='email' id='email' name='email' placeholder='example@example.com' onchange='checkMail()' required)
+						div.form-group.has-error#modelNameDiv
+							label.control-label(for='modelName') Model name:
+							input.form-control(type='text' id='modelName' name='modelName' placeholder='Model Name' onchange='checkText(this)' required)
+						div.form-group.has-error#researchGroupDiv
+							label.control-label(for='researchGroup') Research Group:
+							input.form-control(type='text' id='researchGroup' name='researchGroup' placeholder='e.g: BSC' onchange='checkText(this)' required)
+						div.form-group#paperLinkDiv
+							label.control-label(for='url') URL (Optional):
+							input.form-control(type='url' id='url' name='url' placeholder='Where is the paper (if any)' onchange='checkLink()')
+						hr
+						div.form-group.has-error#stsDiv
+							label.control-label Upload STS_ca
+							input(type='file' name='STS_ca' id='STS_ca' onchange='checkFile(this)' required)
+						div.form-group.has-error#posDiv
+							label.control-label Upload POS
+							input(type='file' name='POS' id='POS' onchange='checkFile(this)' required)
+						div.form-group.has-error#viquiquadDiv
+							label.control-label Upload CatalanQa
+							input(type='file' name='CatalanQa' id='CatalanQa' onchange='checkFile(this)' required)
+						div.form-group.has-error#xquadDiv
+							label.control-label Upload XQuAD
+							input(type='file' name='XQuAD' id='XQuAD' onchange='checkFile(this)' required)
+						div.form-group.has-error#teclaDiv
+							label.control-label Upload TeCla
+							input(type='file' name='TeCla' id='TeCla' onchange='checkFile(this)' required)
+						div.form-group.has-error#tecaDiv
+							label.control-label Upload TECa
+							input(type='file' name='TECa' id='TECa' onchange='checkFile(this)' required)
+						div.form-group.has-error#ancoraDiv
+							label.control-label Upload NER
+							input(type='file' name='AnCora' id='AnCora' onchange='checkFile(this)' required)
+						hr
+						p#submitResults
+							input.submitButton#submit_button(type='button' value='Submit' onclick='submitForm()')
