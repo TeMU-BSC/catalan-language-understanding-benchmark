@@ -84,7 +84,8 @@ function tableSuccess (d) {
 		order: [[3, 'desc']],
 		columnDefs: [
 			{ targets: [0, 1, 2], orderable: false },
-			{ targets: "_all", className: 'dt-center' }
+			{ targets: "_all", className: 'dt-center' },
+			{ targets: "_all", orderSequence: ['desc', 'asc'] }
 		],
 		searching: false
 	});
