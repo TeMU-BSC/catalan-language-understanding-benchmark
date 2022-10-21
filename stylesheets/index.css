@@ -171,6 +171,10 @@ pre {
 #submitResults {
   text-align: right;
 }
+#sampleFiles {
+  text-align: right;
+  padding-left: 5%;
+}
 .datasetHolder {
   margin: 20px 0;
   white-space: pre-wrap;
