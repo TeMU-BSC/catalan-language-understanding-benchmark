@@ -34,6 +34,10 @@ block content
 							label.control-label(for='url') URL (Optional):
 							input.form-control(type='url' id='url' name='url' placeholder='Where is the paper (if any)' onchange='checkLink()')
 						hr
+						div#sampleFiles
+							p
+								a(href='./sample_files.zip')
+									| Sample Files
 						div.form-group.has-error#stsDiv
 							label.control-label Upload STS_ca
 							input(type='file' name='STS_ca' id='STS_ca' onchange='checkFile(this)' required)
@@ -56,5 +60,6 @@ block content
 							label.control-label Upload NER
 							input(type='file' name='AnCora' id='AnCora' onchange='checkFile(this)' required)
 						hr
-						p#submitResults
-							input.submitButton#submit_button(type='button' value='Submit' onclick='submitForm()')
+						div#submitResults
+							p
+								input.submitButton#submit_button(type='button' value='Submit' onclick='submitForm()')
