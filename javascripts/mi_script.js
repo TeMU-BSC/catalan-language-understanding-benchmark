@@ -31,7 +31,7 @@ function tableSuccess (d) {
 		'Rank',
 		'Model',
 		'Submitted By',
-		'URL',
+		'Url',
 		'Score',
 		'NER (F1)',
 		'POS (F1)',
@@ -81,7 +81,7 @@ function tableSuccess (d) {
 		autoWidth: false,
 		//order: [[4, 'desc']],
 		columnDefs: [
-			{ targets: [0, 1, 2, 3], orderable: false },
+			{ targets: [1, 2, 3], orderable: false },
 			{ targets: "_all", className: 'dt-center' },
 			{ targets: "_all", orderSequence: ['desc', 'asc'] }
 		],
