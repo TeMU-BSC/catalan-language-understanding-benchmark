@@ -14,7 +14,8 @@ function checkMail () {
 
 function checkLink () {
   const paperLink = $('#paperLink').val()
-  if (paperLink !== '' && /http[s]?:\/\/[\w-]+\.\w{2,3}[/\w-]*\.?\w{0,4}/.exec(paperLink) == null) {
+	console.log(paperLink)
+  if (paperLink !== undefined && /http[s]?:\/\/[\w-]+\.\w{2,3}[/\w-]*\.?\w{0,4}/.exec(paperLink) == null) {
     if ($('#paperLinkDiv > div.help-block').length === 0) {
       $('#paperLinkDiv').addClass('has-error').append('<div class="help-block">Link ' + paperLink + ' is not valid</div>')
     } else {

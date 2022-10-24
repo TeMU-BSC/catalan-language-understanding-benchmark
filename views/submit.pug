@@ -30,9 +30,9 @@ block content
 						div.form-group.has-error#researchGroupDiv
 							label.control-label(for='researchGroup') Research Group / Submitted by:
 							input.form-control(type='text' id='researchGroup' name='researchGroup' placeholder='e.g: BSC' onchange='checkText(this)' required)
-						div.form-group#paperLinkDiv
+						div.form-group#paperLinkDiv.has-error
 							label.control-label(for='url') URL (Optional):
-							input.form-control(type='url' id='url' name='url' placeholder='URL of the paper or model (if any)' onchange='checkLink()')
+							input.form-control(type='url' id='url' name='url' placeholder='URL of the paper or model (if any)' onfocus='checkLink()')
 						hr
 						div#sampleFiles
 							p
