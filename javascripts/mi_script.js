@@ -31,7 +31,7 @@ function tableSuccess (d) {
 		'Rank',
 		'Model',
 		'Submitted By',
-		'Url',
+		'URL',
 		'Score',
 		'NER (F1)',
 		'POS (F1)',
