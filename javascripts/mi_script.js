@@ -28,7 +28,7 @@ function tableSuccess (d) {
 	})
 
 	const headers = [
-		// 'Rank',
+		'Rank',
 		'Model',
 		'Submitted By',
 		'URL',
@@ -41,7 +41,7 @@ function tableSuccess (d) {
 		'CatalanQA (F1/EM)',
 		'XQuAD-ca (F1/EM)'
 	]
-	const id_href = ['', '', '', '', 'ner', 'pos', 'sts', 'tecla', 'teca', 'catalanqa', 'xquad']
+	const id_href = ['', '', '', '', '', 'ner', 'pos', 'sts', 'tecla', 'teca', 'catalanqa', 'xquad']
 
 	let innerTable = '<table id="table" class="performanceTable table">'
 	innerTable += '<thead><tr>'
@@ -58,11 +58,9 @@ function tableSuccess (d) {
 	innerTable += "</tr></thead></tbody>"
 	$(arr).each(function (elem) {
 		innerTable += '<tr>'
+		innerTable += '<td>' + (elem + 1) + '</td>'
 		$(arr[elem]).each(function (innerElem) {
 			switch (innerElem) {
-				// case 0:
-					// innerTable += '<td>' + (elem + 1)
-					// break
 				case 2:
 					if (arr[elem][innerElem] != '') {
 						innerTable += '<td><a target="_blank" href=' + arr[elem][innerElem] + '><span class="material-symbols-outlined">open_in_new</span></a></td>'
@@ -81,9 +79,9 @@ function tableSuccess (d) {
 	$('#table').DataTable({
 		paging: false,
 		autoWidth: false,
-		order: [[3, 'desc']],
+		//order: [[4, 'desc']],
 		columnDefs: [
-			{ targets: [0, 1, 2], orderable: false },
+			{ targets: [0, 1, 2, 3], orderable: false },
 			{ targets: "_all", className: 'dt-center' },
 			{ targets: "_all", orderSequence: ['desc', 'asc'] }
 		],
