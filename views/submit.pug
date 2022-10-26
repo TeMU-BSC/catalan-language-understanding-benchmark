@@ -45,7 +45,7 @@ block content
 								label.control-label Upload POS
 								input(type='file' name='POS' id='POS' onchange='checkFile(this)' required)
 							div.form-group.has-error#stsDiv
-								label.control-label Upload STS_ca
+								label.control-label Upload STS-ca
 								input(type='file' name='STS_ca' id='STS_ca' onchange='checkFile(this)' required)
 							div.form-group.has-error#teclaDiv
 								label.control-label Upload TeCla
@@ -53,18 +53,18 @@ block content
 							div.form-group.has-error#tecaDiv
 								label.control-label Upload TE-ca
 								input(type='file' name='TECa' id='TECa' onchange='checkFile(this)' required)
-							div.form-group.has-error#xquadDiv
-								label.control-label Upload XQuAD
-								input(type='file' name='XQuAD' id='XQuAD' onchange='checkFile(this)' required)
 							div.form-group.has-error#viquiquadDiv
 								label.control-label Upload CatalanQa
 								input(type='file' name='CatalanQa' id='CatalanQa' onchange='checkFile(this)' required)
+							div.form-group.has-error#xquadDiv
+								label.control-label Upload XQuAD-ca
+								input(type='file' name='XQuAD' id='XQuAD' onchange='checkFile(this)' required)
 							hr
 							div.checkbox#privacyPolicy
 								label
 									input(type='checkbox' name='dataPol' id='dataPol')
 									| I accept the 
-									a(href="https://www.bsc.es/legal-notice") data policy*
+									a(target="_blank" href="https://www.bsc.es/legal-notice") data policy*
 							div#submitResults
 								p
 									input.submitButton#submit_button(type='button' value='Submit' onclick='submitForm()')
