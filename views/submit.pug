@@ -21,45 +21,49 @@ block content
 						p To submit data fill the next form:
 						br
 						form#evaluation_form
-						div.form-group.has-error#emailDiv
-							label.control-label(for='email') Mail (will not be displayed):
-							input.form-control(type='email' id='email' name='email' placeholder='example@example.com' onchange='checkMail()' required)
-						div.form-group.has-error#modelNameDiv
-							label.control-label(for='modelName') Model name:
-							input.form-control(type='text' id='modelName' name='modelName' placeholder='Model Name' onchange='checkText(this)' required)
-						div.form-group.has-error#researchGroupDiv
-							label.control-label(for='researchGroup') Research Group / Submitted by:
-							input.form-control(type='text' id='researchGroup' name='researchGroup' placeholder='e.g: BSC' onchange='checkText(this)' required)
-						div.form-group#paperLinkDiv.has-error
-							label.control-label(for='url') URL (Optional):
-							input.form-control(type='url' id='url' name='url' placeholder='URL of the paper or model (if any)' onfocus='checkLink()')
-						hr
-						div#sampleFiles
-							p
-								a(href='./sample_files.zip')
-									| Download sample submission files
-						div.form-group.has-error#ancoraDiv
-							label.control-label Upload NER
-							input(type='file' name='AnCora' id='AnCora' onchange='checkFile(this)' required)
-						div.form-group.has-error#posDiv
-							label.control-label Upload POS
-							input(type='file' name='POS' id='POS' onchange='checkFile(this)' required)
-						div.form-group.has-error#stsDiv
-							label.control-label Upload STS_ca
-							input(type='file' name='STS_ca' id='STS_ca' onchange='checkFile(this)' required)
-						div.form-group.has-error#teclaDiv
-							label.control-label Upload TeCla
-							input(type='file' name='TeCla' id='TeCla' onchange='checkFile(this)' required)
-						div.form-group.has-error#tecaDiv
-							label.control-label Upload TE-ca
-							input(type='file' name='TECa' id='TECa' onchange='checkFile(this)' required)
-						div.form-group.has-error#xquadDiv
-							label.control-label Upload XQuAD
-							input(type='file' name='XQuAD' id='XQuAD' onchange='checkFile(this)' required)
-						div.form-group.has-error#viquiquadDiv
-							label.control-label Upload CatalanQa
-							input(type='file' name='CatalanQa' id='CatalanQa' onchange='checkFile(this)' required)
-						hr
-						div#submitResults
-							p
-								input.submitButton#submit_button(type='button' value='Submit' onclick='submitForm()')
+							div.form-group.has-error#emailDiv
+								label.control-label(for='email') Mail (will not be displayed):
+								input.form-control(type='email' id='email' name='email' placeholder='example@example.com' onchange='checkMail()' required)
+							div.form-group.has-error#modelNameDiv
+								label.control-label(for='modelName') Model name:
+								input.form-control(type='text' id='modelName' name='modelName' placeholder='Model Name' onchange='checkText(this)' required)
+							div.form-group.has-error#researchGroupDiv
+								label.control-label(for='researchGroup') Research Group / Submitted by:
+								input.form-control(type='text' id='researchGroup' name='researchGroup' placeholder='e.g: BSC' onchange='checkText(this)' required)
+							div.form-group#paperLinkDiv.has-error
+								label.control-label(for='url') URL (Optional):
+								input.form-control(type='url' id='url' name='url' placeholder='URL of the paper or model (if any)' onfocus='checkLink()')
+							hr
+							div#sampleFiles
+								p
+									a(href='./sample_files.zip')
+										| Download sample submission files
+							div.form-group.has-error#ancoraDiv
+								label.control-label Upload NER
+								input(type='file' name='AnCora' id='AnCora' onchange='checkFile(this)' required)
+							div.form-group.has-error#posDiv
+								label.control-label Upload POS
+								input(type='file' name='POS' id='POS' onchange='checkFile(this)' required)
+							div.form-group.has-error#stsDiv
+								label.control-label Upload STS_ca
+								input(type='file' name='STS_ca' id='STS_ca' onchange='checkFile(this)' required)
+							div.form-group.has-error#teclaDiv
+								label.control-label Upload TeCla
+								input(type='file' name='TeCla' id='TeCla' onchange='checkFile(this)' required)
+							div.form-group.has-error#tecaDiv
+								label.control-label Upload TE-ca
+								input(type='file' name='TECa' id='TECa' onchange='checkFile(this)' required)
+							div.form-group.has-error#xquadDiv
+								label.control-label Upload XQuAD
+								input(type='file' name='XQuAD' id='XQuAD' onchange='checkFile(this)' required)
+							div.form-group.has-error#viquiquadDiv
+								label.control-label Upload CatalanQa
+								input(type='file' name='CatalanQa' id='CatalanQa' onchange='checkFile(this)' required)
+							hr
+							div.btn-group#privacyPolicy
+								input(type='checkbox' name='dataPol' id='dataPol' required)
+								label.control-label I accept the 
+									a(href="https://www.bsc.es/lega-notice") data policy*
+							div#submitResults
+								p
+									input.submitButton#submit_button(type='button' value='Submit' onclick='submitForm()')
