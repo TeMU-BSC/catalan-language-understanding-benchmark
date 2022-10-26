@@ -37,7 +37,7 @@ function tableSuccess (d) {
 		'POS (F1)',
 		'STS-ca (Comb.)',
 		'TeCla (Acc.)',
-		'TE-Ca (Acc.)',
+		'TE-ca (Acc.)',
 		'CatalanQA (F1/EM)',
 		'XQuAD-ca (F1/EM)'
 	]
