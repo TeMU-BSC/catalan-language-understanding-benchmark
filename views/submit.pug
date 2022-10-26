@@ -60,10 +60,11 @@ block content
 								label.control-label Upload CatalanQa
 								input(type='file' name='CatalanQa' id='CatalanQa' onchange='checkFile(this)' required)
 							hr
-							div.btn-group#privacyPolicy
-								input(type='checkbox' name='dataPol' id='dataPol' required)
-								label.control-label I accept the 
-									a(href="https://www.bsc.es/lega-notice") data policy*
+							div.checkbox#privacyPolicy
+								label
+									input(type='checkbox' name='dataPol' id='dataPol')
+									| I accept the 
+									a(href="https://www.bsc.es/legal-notice") data policy*
 							div#submitResults
 								p
 									input.submitButton#submit_button(type='button' value='Submit' onclick='submitForm()')
