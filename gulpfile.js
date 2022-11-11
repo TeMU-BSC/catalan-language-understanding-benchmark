@@ -1,25 +1,39 @@
-var pug = require('gulp-pug')
-var gulp = require('gulp')
-var rename = require('gulp-rename')
-var data = require('gulp-data')
-var connect = require('gulp-connect')
-var replace = require('gulp-replace')
-var ghPages = require('gulp-gh-pages')
-var bower = require('gulp-bower')
-var image = require('gulp-image')
-var stylus = require('gulp-stylus')
-var minify = require('gulp-minify')
-var path = require('path')
-var fs = require('fs')
-// var cheerio = require('cheerio')
+const pug = require('gulp-pug')
+const gulp = require('gulp')
+const rename = require('gulp-rename')
+const data = require('gulp-data')
+const connect = require('gulp-connect')
+const replace = require('gulp-replace')
+const ghPages = require('gulp-gh-pages')
+const bower = require('gulp-bower')
+const image = require('gulp-image')
+const stylus = require('gulp-stylus')
+const minify = require('gulp-minify')
+const path = require('path')
+const fs = require('fs')
+const purgecss = require('gulp-purgecss')
 
-var build_dir = 'catalan-language-understanding-benchmark/' // good to have this be the same as the repo name for gh-pages purposes
+const build_dir = 'catalan-language-understanding-benchmark/' // good to have this be the same as the repo name for gh-pages purposes
 
 
 gulp.task('bower', function () {
   return bower()
     .pipe(gulp.dest('./' + build_dir + 'bower_components/'))
 })
+
+gulp.task('purge_bootstrap', function () {
+	return gulp.src('./' + build_dir + 'bower_components/bootstrap/**/*.css')
+		.pipe(purgecss({ content: ['./' + build_dir + '*.html'] }))
+		.pipe(gulp.dest('./' + build_dir + 'bower_components/bootstrap'))
+})
+
+gulp.task('purge_styles', function () {
+	return gulp.src('./' + build_dir + 'stylesheets/*.css')
+		.pipe(purgecss({ content: ['./' + build_dir + '*.html'] }))
+		.pipe(gulp.dest('./' + build_dir + 'stylesheets'))
+})
+
+gulp.task('purgecss', gulp.series('purge_styles', 'purge_bootstrap'))
 
 gulp.task('image', function () {
   return gulp.src('./views/images/*')
@@ -83,5 +97,5 @@ gulp.task('correct_link_paths', gulp.series('generate'), async function () {
 
 
 gulp.task('default', gulp.series('generate', 'correct_link_paths', 'image', 'js', 'css'))
-gulp.task('html', gulp.series('generate', 'js'))
+gulp.task('html', gulp.series('generate', 'js', 'css', 'purgecss'))
 
