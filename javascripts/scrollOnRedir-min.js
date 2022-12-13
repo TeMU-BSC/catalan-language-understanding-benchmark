@@ -1,1 +1,0 @@
-$("body").on("click.scroll-adjust",'[href^="#"]',function(o){var i;o&&o.isDefaultPrevented()||"fixed"===(i=$("div.navbar")).css("position")&&$(window).one("scroll",function(){window.scrollBy(0,-i.height())})});
