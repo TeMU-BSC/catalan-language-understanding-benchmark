@@ -1,6 +1,6 @@
 function obtainTables () {
   $.ajax({
-    url: 'https://bsclsaina01.bsc.es/clubapi/tables',
+    url: 'https://bsclsaina01.bsc.es/club/api/tables',
     //url: 'http://localhost:3000/api/tables',
     dataType: 'json',
     // contentType: "application/json",

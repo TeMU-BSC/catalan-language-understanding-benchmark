@@ -360,7 +360,7 @@ button:focus {
 }
 #topCover {
   min-height: initial;
-  background-image: linear-gradient(to bottom, rgba(34,34,34,0) 60%, #222), url("../AINA_header.png");
+  background-image: linear-gradient(to bottom, rgba(34,34,34,0) 60%, #222), url("../images/AINA_header.png");
   background-position: auto, center left;
   background-repeat: no-repeat, no-repeat;
   background-size: auto, cover;
