@@ -80,12 +80,12 @@ function submitForm (e) {
 	$('#submit_button').val('Submit').attr('disabled', true)
 	// $('#evaluation_form + img').css('filter', 'invert(100%)').css('text-align', 'center')
 	// Toast evaluating...
-	Toastify({
+	const evalToast = Toastify({
 		text: "Evaluating...",
-		duration: 6000,
+		duration: -1,
 		stopOnFocus: false,
 		style: {
-			background: "#136b82"
+			background: "#ffce2d"
 		}
 	}).showToast()
 	$.ajax({
@@ -95,45 +95,44 @@ function submitForm (e) {
 		data: formData,
 		processData: false,
 		contentType: false,
-		success: submitSuccess,
-		error: submitError
+		success:  function () {
+			$('#evaluation_form').parent().empty().append('<h1>Thanks for submitting!</h1><br><img src="./images/ok.png" alt="Evaluation sent successfully">')
+			evalToast.hideToast();
+			console.log('Upload okay')
+			evaluationSent = false;
+		},
+		error:  function submitError (err) {
+			console.error(err)
+			// Toast error code + detail.
+			// Enable button
+			switch (err.status) {
+				case 400:
+					let responseParsed = JSON.parse(err.responseText)
+					let failedTasks = responseParsed.evaluations_error.join(', ')
+					toast = Toastify({
+						text: failedTasks + " failed, please check the file names or their content",
+						duration: 8000,
+						stopOnFocus: true,
+						style: { background: "#ee5757" }
+					})
+					break;
+
+				default:
+					toast = Toastify({
+						text: "An unknown error happened, please contact the administrators.",
+						duration: 8000,
+						stopOnFocus: true,
+						style: { background: "#ee5757" }
+					})
+					break;
+			}
+			toast.showToast();
+			evalToast.hideToast()
+			$('#submit_button').attr('disabled', true);
+			evaluationSent = false;
+		}
 		
 	})
-}
-
-function submitSuccess () {
-	$('#evaluation_form').parent().empty().append('<h1>Thanks for submitting!</h1><br><img src="./images/ok.png" alt="Evaluation sent successfully">')
-
-	console.log('Upload okay')
-	evaluationSent = false;
-}
-
-function submitError (err) {
-	console.error(err)
-	// Toast error code + detail.
-	// Enable button
-	switch (err.status) {
-		case 400:
-			let responseParsed = JSON.parse(err.responseText)
-			let failedTasks = responseParsed.evaluations_error.join(', ')
-			toast = Toastify({
-				text: failedTasks + " failed, please check the files are the correct ones",
-				duration: 3000,
-				style: { background: "#f00" }
-			})
-			break;
-
-		default:
-			toast = Toastify({
-				text: "An unknow error happened, please contact the administrators.",
-				duration: 3000,
-				style: { background: "#ff0000" }
-			})
-			break;
-	}
-	toast.showToast();
-	$('#submit_button').attr('disabled', true);
-	evaluationSent = false;
 }
 
 $(document).ready(function () {
