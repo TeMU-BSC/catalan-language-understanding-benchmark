@@ -33,7 +33,9 @@
   },
   "homepage": "https://github.com/TeMU-BSC/catalan-language-understanding-benchmark",
   "devDependencies": {
+    "browser-sync": "^2.27.10",
     "eslint": "^8.24.0",
+    "gulp-cache": "^1.1.3",
     "gulp-purgecss": "^5.0.0"
   }
 }

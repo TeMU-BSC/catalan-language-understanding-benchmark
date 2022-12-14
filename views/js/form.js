@@ -7,11 +7,17 @@
 // Global var to check if an evaluation has been sent
 let evaluationSent = false;
 
+FilePond.registerPlugin(FilePondPluginFileValidateType);
+FilePond.registerPlugin(FilePondPluginFileValidateSize);
+
 // Create the filepond
 FilePond.create(document.getElementById('pond'), {
 	allowMultiple: true,
 	storeAsFile: true,
+	dropOnPage: true,
 	maxFiles: 7,
+	maxTotalFileSize: "20MB",
+	acceptedFileTypes: ['application/json', "text/plain"],
 	credits: false
 })
 
@@ -81,16 +87,18 @@ function submitForm (e) {
 	// $('#evaluation_form + img').css('filter', 'invert(100%)').css('text-align', 'center')
 	// Toast evaluating...
 	const evalToast = Toastify({
-		text: "Evaluating...",
+		text: "Evaluating, please wait ...",
 		duration: -1,
-		stopOnFocus: false,
+		gravity: "bottom", // `top` or `bottom`
+		position: "center", // `left`, `center` or `right`
 		style: {
-			background: "#ffce2d"
+			background: "#E40520",
+			"font-weight": 800
 		}
-	}).showToast()
+	}).showToast();
 	$.ajax({
-		url: 'http://localhost:3000/api/results',
-		// url: 'https://bscplantl01.bsc.es/evales/api/results',
+		// url: 'http://localhost:3000/api/results',
+		url: 'https://bsclsaina01.bsc.es/club/api/results',
 		type: 'POST',
 		data: formData,
 		processData: false,
@@ -113,7 +121,12 @@ function submitForm (e) {
 						text: failedTasks + " failed, please check the file names or their content",
 						duration: 8000,
 						stopOnFocus: true,
-						style: { background: "#ee5757" }
+						gravity: "bottom", // `top` or `bottom`
+						position: "center", // `left`, `center` or `right`
+						style: {
+							background: "#E40520",
+							"font-weight": 800
+						}
 					})
 					break;
 
@@ -122,7 +135,12 @@ function submitForm (e) {
 						text: "An unknown error happened, please contact the administrators.",
 						duration: 8000,
 						stopOnFocus: true,
-						style: { background: "#ee5757" }
+						gravity: "bottom", // `top` or `bottom`
+						position: "center", // `left`, `center` or `right`
+						style: {
+							background: "#E40520",
+							"font-weight": 800
+						}
 					})
 					break;
 			}

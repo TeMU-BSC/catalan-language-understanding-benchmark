@@ -9,11 +9,7 @@ const bower = require('gulp-bower')
 const image = require('gulp-image')
 const stylus = require('gulp-stylus')
 const minify = require('gulp-minify')
-const path = require('path')
-const fs = require('fs')
 const purgecss = require('gulp-purgecss')
-// var cheerio = require('cheerio')
-
 const build_dir = 'catalan-language-understanding-benchmark/' // good to have this be the same as the repo name for gh-pages purposes
 
 

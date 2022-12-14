@@ -1,4 +1,6 @@
 serve:
-	make build && gulp connect
+	gulp connect
 build:
-	rm -rf ./catalan-language-understanding-benchmark && gulp all
+	gulp all
+clean:
+	rm -rf ./catalan-language-understanding-benchmark

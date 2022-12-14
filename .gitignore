@@ -4,12 +4,8 @@ catalan-language-understanding-benchmark/
 bower_components/
 *.DS_Store
 codalab-cli/
-
 development.json
-
 saved.html
-
 results*.json
-
 .idea
 yarn.lock
