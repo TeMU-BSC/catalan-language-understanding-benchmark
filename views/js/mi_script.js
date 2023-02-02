@@ -16,7 +16,7 @@ function tableSuccess (d) {
 			element.modelName,
 			element.researchGroup,
 			element.url,
-			Number(Number(element.sum) / Number(10)).toPrecision(4).toString(),
+			Number(Number(element.sum) / Number(8)).toPrecision(4).toString(),
 			Number(element.AnCora_ca.F1).toPrecision(4).toString(),
 			Number(element.POS.F1).toPrecision(4).toString(),
 			Number(element.STS_ca.combined_score).toPrecision(4).toString(),
