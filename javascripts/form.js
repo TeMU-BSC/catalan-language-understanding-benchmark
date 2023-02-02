@@ -15,7 +15,7 @@ FilePond.create(document.getElementById('pond'), {
 	allowMultiple: true,
 	storeAsFile: true,
 	dropOnPage: true,
-	maxFiles: 7,
+	maxFiles: 8,
 	maxTotalFileSize: "20MB",
 	acceptedFileTypes: ['application/json', "text/plain"],
 	credits: false
@@ -46,7 +46,7 @@ function checkLink () {
 
 function checkFileInPond() {
 	let filesPond = new FormData($('form')[0]).getAll('filepond');
-	if (filesPond.length === 7) {
+	if (filesPond.length === 8) {
 		$('#pondDiv').removeClass('has-error').children('div.help-block').remove()
 	} else {
 		if ($('#pondDiv').children('div.help-block').length === 0) {
