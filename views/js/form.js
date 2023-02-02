@@ -97,8 +97,8 @@ function submitForm (e) {
 		}
 	}).showToast();
 	$.ajax({
-		url: 'http://localhost:3000/api/results',
-		// url: 'https://bsclsaina01.bsc.es/club/api/results',
+		// url: 'http://localhost:3000/api/results',
+		url: 'https://bsclsaina01.bsc.es/club/api/results',
 		type: 'POST',
 		data: formData,
 		processData: false,
