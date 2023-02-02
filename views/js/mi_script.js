@@ -1,7 +1,7 @@
 function obtainTables () {
   $.ajax({
-    url: 'https://bsclsaina01.bsc.es/club/api/tables',
-    //url: 'http://localhost:3000/api/tables',
+    // url: 'https://bsclsaina01.bsc.es/club/api/tables',
+    url: 'http://localhost:3000/api/tables',
     dataType: 'json',
     // contentType: "application/json",
     success: tableSuccess,
@@ -23,7 +23,8 @@ function tableSuccess (d) {
 			Number(element.TeCla.Accuracy).toPrecision(4).toString(),
 			Number(element.TECa.Accuracy).toPrecision(4).toString(),
 			Number(element.CatalanQA_results.f1).toPrecision(4).toString() + '/' + Number(element.CatalanQA_results.exact).toPrecision(4).toString(),
-			Number(element.XQuAD_Ca.f1).toPrecision(4).toString() + '/' + Number(element.XQuAD_Ca.exact).toPrecision(4).toString()
+			Number(element.XQuAD_Ca.f1).toPrecision(4).toString() + '/' + Number(element.XQuAD_Ca.exact).toPrecision(4).toString(),
+			Number(element.Massive.Accuracy).toPrecision(4).toString(),
 		]
 	})
 
@@ -39,9 +40,10 @@ function tableSuccess (d) {
 		'TeCla (Acc.)',
 		'TE-ca (Acc.)',
 		'CatalanQA (F1/EM)',
-		'XQuAD-ca (F1/EM)'
+		'XQuAD-ca (F1/EM)',
+		'Massive (Acc.)',
 	]
-	const id_href = ['', '', '', '', '', 'ner', 'pos', 'sts', 'tecla', 'teca', 'catalanqa', 'xquad']
+	const id_href = ['', '', '', '', '', 'ner', 'pos', 'sts', 'tecla', 'teca', 'catalanqa', 'xquad', 'massive']
 
 	let innerTable = '<table id="table" class="performanceTable table">'
 	innerTable += '<thead><tr>'

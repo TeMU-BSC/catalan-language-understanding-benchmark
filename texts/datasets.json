@@ -45,5 +45,11 @@
 		"text": "The Cross-lingual Question Answering Dataset is a multilingual benchmark for evaluating question-answering performance. The dataset consists of a subset of 240 paragraphs from the Wikipedia and 1,190 question-answer pairs from the development set of SQuAD v1.1 (Rajpurkar et al., 2016) together with their professional translations into ten languages: Spanish, German, Greek, Russian, Turkish, Arabic, Vietnamese, Thai, Chinese, and Hindi. Rumanian was added later. We created a Catalan version using professional translators.\nThe model for this task has been trained with CatalanQA and texted with XQuaD-ca.",
 		"id": "xquad",
 		"link": "https://huggingface.co/datasets/projecte-aina/xquad-ca"
+	},
+	"massive": {
+		"title": "Massive",
+		"text": "MASSIVE is a parallel dataset of > 1M utterances across 51 languages with annotations for the Natural Language Understanding tasks of intent prediction and slot annotation. Utterances span 60 intents and include 55 slot types. MASSIVE was created by localizing the SLURP dataset, composed of general Intelligent Voice Assistant single-shot interactions.",
+		"id": "massive",
+		"link": "https://huggingface.co/datasets/AmazonScience/massive"
 	}
 }
